@@ -79,6 +79,7 @@ const Theme: ThemeProps = {
     CheckboxesWidget,
     PasswordWidget,
     RadioWidget,
+    SelectWidget: RadioWidget,
   },
   fields: {
     TitleField,

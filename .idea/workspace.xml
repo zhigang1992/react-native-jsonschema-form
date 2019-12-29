@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4653630-ea76-4b70-8879-15afbfe60f18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/form/RadioWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/form/RangeWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/form/CheckboxWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form/CheckboxWidget.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/node_modules/react-jsonschema-form" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/form" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -48,6 +47,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example/form" />
       <recent name="$PROJECT_DIR$/example/node_modules/react-jsonschema-form" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -95,7 +95,7 @@
       <updated>1577541787124</updated>
       <workItem from="1577541788368" duration="1170000" />
       <workItem from="1577548615377" duration="1139000" />
-      <workItem from="1577599218203" duration="10617000" />
+      <workItem from="1577599218203" duration="10986000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add basic Text">
       <created>1577606313657</created>
@@ -125,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577609584927</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: add radio widget">
+      <created>1577610796199</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1577610796199</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,17 +143,18 @@
     <MESSAGE value="feat: add text area" />
     <MESSAGE value="feat: add check boxes" />
     <MESSAGE value="feat: add password" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add password" />
+    <MESSAGE value="feat: add radio widget" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add radio widget" />
   </component>
   <component name="WindowStateProjectService">
     <state x="673" y="351" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577609848694">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="673" y="351" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1577609848694" />
-    <state x="566" y="63" key="CommitChangelistDialog2" timestamp="1577609584827">
+    <state x="566" y="63" key="CommitChangelistDialog2" timestamp="1577610796000">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="566" y="63" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1577609584827" />
+    <state x="566" y="63" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1577610796000" />
     <state width="1920" height="278" key="GridCell.Tab.0.bottom" timestamp="1577606315561">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -179,10 +187,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="835" y="415" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577600790672" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1577609425876">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1577611162910">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="625" y="240" width="670" height="691" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577601337474" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577609425876" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577611162910" />
   </component>
 </project>
