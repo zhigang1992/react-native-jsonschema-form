@@ -1,14 +1,15 @@
 import {ThemeProps, withTheme} from 'react-jsonschema-form';
 import React from 'react';
 import {getDefaultRegistry} from 'react-jsonschema-form/lib/utils';
-import {Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import FieldTemplate from './form/FieldTemplate';
 import TextWidget from './form/TextWidget';
 import TitleField from './form/TitleField';
 import ObjectFieldTemplate from './form/ObjectFieldTemplate';
 import TextareaWidget from './form/TextareaWidget';
 import CheckboxWidget from './form/CheckboxWidget';
-import CheckboxesWidget from "./form/CheckboxesWidget";
+import CheckboxesWidget from './form/CheckboxesWidget';
+import PasswordWidget from './form/PasswordWidget';
 
 const schema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -22,6 +23,11 @@ const schema = {
           type: 'string',
           description: 'This is a description',
           title: '牛',
+        },
+        password: {
+          type: 'string',
+          description: 'This is a description',
+          title: 'Password',
         },
         world: {
           type: 'boolean',
@@ -48,6 +54,9 @@ const uiSchema = {
   hello: {
     'ui:widget': 'textarea',
   },
+  password: {
+    'ui:widget': 'password',
+  },
   multipleChoicesList: {
     'ui:widget': 'checkboxes',
   },
@@ -59,6 +68,7 @@ const Theme: ThemeProps = {
     TextareaWidget,
     CheckboxWidget,
     CheckboxesWidget,
+    PasswordWidget,
   },
   fields: {
     TitleField,
@@ -75,7 +85,8 @@ const Test = (props: any) => (
 
 const FormPage = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center'}}>
+    <ScrollView style={{flex: 1}}>
+      <View style={{height: 100}} />
       <Form
         schema={schema}
         uiSchema={uiSchema}
@@ -83,7 +94,7 @@ const FormPage = () => {
         onChange={c => console.log(c.formData)}>
         <Text>{JSON.stringify(Object.keys(getDefaultRegistry().widgets))}</Text>
       </Form>
-    </View>
+    </ScrollView>
   );
 };
 

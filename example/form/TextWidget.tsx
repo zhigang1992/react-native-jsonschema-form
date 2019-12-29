@@ -15,7 +15,8 @@ const TextWidget = ({
   autofocus,
   options,
   multiline,
-}: WidgetProps & {multiline?: boolean}) => {
+  secureEntry,
+}: WidgetProps & {multiline?: boolean; secureEntry?: boolean}) => {
   const [focused, setFocused] = useState(false);
   return (
     <TextInput
@@ -24,6 +25,7 @@ const TextWidget = ({
       autoFocus={autofocus}
       editable={!disabled && !readonly}
       value={value ? value : ''}
+      secureTextEntry={secureEntry}
       onChangeText={newText =>
         onChange(newText === '' ? options.emptyValue : newText)
       }
