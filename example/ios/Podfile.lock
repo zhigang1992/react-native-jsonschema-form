@@ -217,6 +217,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
+  - Reveal-SDK (24)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -247,11 +248,13 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - Reveal-SDK
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Reveal-SDK
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -331,8 +334,9 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
+  Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: 78e6a38d5fc8712e821bc01b5a582ad0e7a54d3a
+PODFILE CHECKSUM: 123c8686499a0c35c9bbe289e899724d8a2f80ae
 
 COCOAPODS: 1.8.4

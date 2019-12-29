@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4653630-ea76-4b70-8879-15afbfe60f18" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/example/form/DescriptionField.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/form/FieldTemplate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/form/FormContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/form/ObjectFieldTemplate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/form/TextWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/form/TitleField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.prettierrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/zenyatta.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/zenyatta.xcodeproj/project.pbxproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +22,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+      <selected-paths>
+        <path>
+          <id value="$PROJECT_DIR$/example/package.json" />
+          <id value="start" />
+        </path>
+      </selected-paths>
+    </layout>
   </component>
   <component name="ProjectId" id="1VcA0bWABJ1xqFC7INYyfP2cq6s" />
   <component name="ProjectViewState">
@@ -23,7 +46,38 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/node_modules/react-jsonschema-form" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/example/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example/node_modules/react-jsonschema-form" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/example/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -47,14 +101,52 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577541787124</updated>
-      <workItem from="1577541788368" duration="59000" />
+      <workItem from="1577541788368" duration="1170000" />
+      <workItem from="1577548615377" duration="1139000" />
+      <workItem from="1577599218203" duration="6101000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1577541830781">
+    <state width="1920" height="278" key="GridCell.Tab.0.bottom" timestamp="1577606111501">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577541830781" />
+    <state width="1920" height="293" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577601361112" />
+    <state width="1920" height="278" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1577606111501" />
+    <state width="1920" height="278" key="GridCell.Tab.0.center" timestamp="1577606111501">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="293" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577601361111" />
+    <state width="1920" height="278" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1577606111501" />
+    <state width="1920" height="278" key="GridCell.Tab.0.left" timestamp="1577606111500">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="293" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577601361111" />
+    <state width="1920" height="278" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1577606111500" />
+    <state width="1920" height="278" key="GridCell.Tab.0.right" timestamp="1577606111501">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="293" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577601361112" />
+    <state width="1920" height="278" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1577606111501" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1577606104477">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1577606104477" />
+    <state x="630" y="292" width="659" height="518" key="find.popup" timestamp="1577605423186">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="630" y="292" width="659" height="518" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577605423186" />
+    <state x="835" y="415" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1577600790672">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="835" y="415" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577600790672" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1577606154563">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="625" y="240" width="670" height="691" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577601337474" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577606154563" />
   </component>
 </project>
