@@ -1,7 +1,13 @@
 import React from 'react';
 
 import {WidgetProps} from 'react-jsonschema-form';
-import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import DescriptionField from './DescriptionField';
 import TitleField from './TitleField';
 
@@ -24,29 +30,39 @@ const CheckboxWidget = (props: WidgetProps) => {
   );
 };
 
-export const CheckBoxComponent = ({
-  disabled,
-  onChange,
-  selected,
-  label,
-}: {
+export const CheckBoxComponent = (props: {
   disabled?: boolean;
   onChange: (selected: boolean) => void;
   selected: boolean;
   label: string;
 }) => (
+  <BooleanToggleRow
+    {...props}
+    on={require('./assets/checkboxOn.png')}
+    off={require('./assets/checkboxOff.png')}
+  />
+);
+
+export const BooleanToggleRow = ({
+  disabled,
+  onChange,
+  selected,
+  label,
+  on,
+  off,
+}: {
+  disabled?: boolean;
+  onChange: (selected: boolean) => void;
+  selected: boolean;
+  label: string;
+  on: ImageSourcePropType;
+  off: ImageSourcePropType;
+}) => (
   <TouchableOpacity
     style={styles.container}
     disabled={disabled}
     onPress={() => onChange(!selected)}>
-    <Image
-      source={
-        selected
-          ? require('./assets/checkboxOn.png')
-          : require('./assets/checkboxOff.png')
-      }
-      style={styles.checkbox}
-    />
+    <Image source={selected ? on : off} style={styles.checkbox} />
     <Text style={styles.text}>{label}</Text>
   </TouchableOpacity>
 );

@@ -10,6 +10,7 @@ import TextareaWidget from './form/TextareaWidget';
 import CheckboxWidget from './form/CheckboxWidget';
 import CheckboxesWidget from './form/CheckboxesWidget';
 import PasswordWidget from './form/PasswordWidget';
+import RadioWidget from './form/RadioWidget';
 
 const schema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -34,6 +35,11 @@ const schema = {
           description: 'This is a description',
           title: 'Sup',
         },
+        worldRadio: {
+          type: 'boolean',
+          description: 'This is a description',
+          title: 'Sup',
+        },
         multipleChoicesList: {
           type: 'array',
           title: 'A multiple choices list',
@@ -54,6 +60,9 @@ const uiSchema = {
   hello: {
     'ui:widget': 'textarea',
   },
+  worldRadio: {
+    'ui:widget': 'radio',
+  },
   password: {
     'ui:widget': 'password',
   },
@@ -69,6 +78,7 @@ const Theme: ThemeProps = {
     CheckboxWidget,
     CheckboxesWidget,
     PasswordWidget,
+    RadioWidget,
   },
   fields: {
     TitleField,
