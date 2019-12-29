@@ -1,43 +1,54 @@
-import {ThemeProps, withTheme} from 'react-jsonschema-form';
+import {withTheme} from 'react-jsonschema-form';
 import React from 'react';
 import {getDefaultRegistry} from 'react-jsonschema-form/lib/utils';
 import {ScrollView, Text, View} from 'react-native';
-import FieldTemplate from './form/FieldTemplate';
-import TextWidget from './form/TextWidget';
-import TitleField from './form/TitleField';
-import ObjectFieldTemplate from './form/ObjectFieldTemplate';
-import TextareaWidget from './form/TextareaWidget';
-import CheckboxWidget from './form/CheckboxWidget';
-import CheckboxesWidget from './form/CheckboxesWidget';
-import PasswordWidget from './form/PasswordWidget';
-import RadioWidget from './form/RadioWidget';
-import RangeWidget from './form/RangeWidget';
+import Theme from './form/Theme';
 
 const schema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
-  $ref: '#/definitions/Test',
+  $ref: '#/definitions/Root',
   definitions: {
-    Test: {
+    Root: {
       type: 'object',
       properties: {
-        hello: {
+        select: {
           type: 'string',
-          enum: ['hello', 'world', 'sup'],
-          enumNames: ['asdfadf', 'adsfa', 'adsfasdfasdf'],
+          enum: ['Option A', 'Option B', 'Option C'],
+          description: 'This is a description',
+          title: 'Title',
         },
-        world: {
-          type: 'number',
+        arary: {
+          type: 'array',
+          items: {
+            type: 'string',
+          },
+          maxItems: 2,
+        },
+        multiselect: {
+          type: 'array',
+          items: {
+            type: 'string',
+            enum: ['Option A', 'Option B', 'Option C'],
+          },
+          description: 'This is a multi select',
+          title: 'MultiSelect',
+          uniqueItems: true,
         },
       },
-      required: ['hello'],
+      required: ['select', 'arary', 'multiselect'],
       additionalProperties: false,
     },
   },
 } as any;
 
 const uiSchema = {
-  world: {
-    'ui:widget': 'range',
+  multiselect: {
+    'ui:widget': 'checkboxes',
+  },
+  array: {
+    items: {
+      'ui:widget': 'select',
+    },
   },
   // hello: {
   //   'ui:widget': 'textarea',
@@ -52,24 +63,6 @@ const uiSchema = {
   //   'ui:widget': 'checkboxes',
   // },
 } as any;
-
-const Theme: ThemeProps = {
-  widgets: {
-    TextWidget,
-    TextareaWidget,
-    CheckboxWidget,
-    CheckboxesWidget,
-    PasswordWidget,
-    RadioWidget,
-    SelectWidget: RadioWidget,
-    RangeWidget,
-  },
-  fields: {
-    TitleField,
-  },
-  FieldTemplate,
-  ObjectFieldTemplate,
-};
 
 const Form = withTheme(Theme);
 
