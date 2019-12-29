@@ -11,43 +11,22 @@ import CheckboxWidget from './form/CheckboxWidget';
 import CheckboxesWidget from './form/CheckboxesWidget';
 import PasswordWidget from './form/PasswordWidget';
 import RadioWidget from './form/RadioWidget';
+import RangeWidget from './form/RangeWidget';
 
 const schema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
   $ref: '#/definitions/Test',
   definitions: {
     Test: {
-      title: 'WTF',
       type: 'object',
       properties: {
         hello: {
           type: 'string',
-          description: 'This is a description',
-          title: '牛',
-        },
-        password: {
-          type: 'string',
-          description: 'This is a description',
-          title: 'Password',
+          enum: ['hello', 'world', 'sup'],
+          enumNames: ['asdfadf', 'adsfa', 'adsfasdfasdf'],
         },
         world: {
-          type: 'boolean',
-          description: 'This is a description',
-          title: 'Sup',
-        },
-        worldRadio: {
-          type: 'boolean',
-          description: 'This is a description',
-          title: 'Sup',
-        },
-        multipleChoicesList: {
-          type: 'array',
-          title: 'A multiple choices list',
-          items: {
-            type: 'string',
-            enum: ['foo', 'bar', 'fuzz', 'qux'],
-          },
-          uniqueItems: true,
+          type: 'number',
         },
       },
       required: ['hello'],
@@ -57,18 +36,21 @@ const schema = {
 } as any;
 
 const uiSchema = {
-  hello: {
-    'ui:widget': 'textarea',
+  world: {
+    'ui:widget': 'range',
   },
-  worldRadio: {
-    'ui:widget': 'radio',
-  },
-  password: {
-    'ui:widget': 'password',
-  },
-  multipleChoicesList: {
-    'ui:widget': 'checkboxes',
-  },
+  // hello: {
+  //   'ui:widget': 'textarea',
+  // },
+  // worldRadio: {
+  //   'ui:widget': 'radio',
+  // },
+  // password: {
+  //   'ui:widget': 'password',
+  // },
+  // multipleChoicesList: {
+  //   'ui:widget': 'checkboxes',
+  // },
 } as any;
 
 const Theme: ThemeProps = {
@@ -80,6 +62,7 @@ const Theme: ThemeProps = {
     PasswordWidget,
     RadioWidget,
     SelectWidget: RadioWidget,
+    RangeWidget,
   },
   fields: {
     TitleField,

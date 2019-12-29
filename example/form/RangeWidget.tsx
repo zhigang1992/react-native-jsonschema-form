@@ -1,27 +1,51 @@
 import React from 'react';
 
-import {Text} from 'react-native';
-
-// import {rangeSpec} from 'react-jsonschema-form/lib/utils';
+import {rangeSpec} from 'react-jsonschema-form/lib/utils';
 import {WidgetProps} from 'react-jsonschema-form';
+import Slider from '@react-native-community/slider';
+import {StyleSheet, Text, View} from 'react-native';
 
 const RangeWidget = ({
-  // required,
-  // label,
-  // id,
-  // value,
-  // readonly,
-  // disabled,
-  // options,
-  // schema,
-  // onChange,
+  value,
+  readonly,
+  disabled,
+  schema,
+  onChange,
 }: WidgetProps) => {
-  // const range = rangeSpec(schema);
-  //
-  // const _onChange = (newValue: any) =>
-  //   onChange(newValue === '' ? options.emptyValue : newValue);
+  const {min = 0, step = 1, max = 100} = rangeSpec(schema);
 
-  return <Text>Slider On Yet Implemented</Text>;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.ends}>{min}</Text>
+      <Slider
+        style={styles.slider}
+        value={value}
+        step={step}
+        disabled={disabled || readonly}
+        minimumValue={min}
+        maximumValue={max}
+        onValueChange={onChange}
+      />
+      <Text style={styles.ends}>{value}</Text>
+    </View>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  ends: {
+    fontSize: 14,
+    color: 'gray',
+  },
+  slider: {
+    flex: 1,
+    marginHorizontal: 15,
+    height: 40,
+  },
+});
 
 export default RangeWidget;
