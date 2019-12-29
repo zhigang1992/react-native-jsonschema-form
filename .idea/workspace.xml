@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4653630-ea76-4b70-8879-15afbfe60f18" name="Default Changelist" comment="feat: add range selector">
-      <change afterPath="$PROJECT_DIR$/example/form/ArrayFieldTemplate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/form/Theme.tsx" afterDir="false" />
+    <list default="true" id="d4653630-ea76-4b70-8879-15afbfe60f18" name="Default Changelist" comment="feat: add array">
+      <change afterPath="$PROJECT_DIR$/example/form/ErrorList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/zenyatta.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/zenyatta.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/form/FieldTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form/FieldTemplate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/form/FormContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form/FormContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/form/Theme.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form/Theme.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,7 @@
       <updated>1577541787124</updated>
       <workItem from="1577541788368" duration="1170000" />
       <workItem from="1577548615377" duration="1139000" />
-      <workItem from="1577599218203" duration="16941000" />
+      <workItem from="1577599218203" duration="19058000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add basic Text">
       <created>1577606313657</created>
@@ -148,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577612365557</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: add array">
+      <created>1577617650958</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1577617650959</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,17 +181,18 @@
     <MESSAGE value="feat: add radio widget" />
     <MESSAGE value="feat: range stub" />
     <MESSAGE value="feat: add range selector" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add range selector" />
+    <MESSAGE value="feat: add array" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add array" />
   </component>
   <component name="WindowStateProjectService">
     <state x="673" y="351" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577609848694">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="673" y="351" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1577609848694" />
-    <state x="566" y="63" key="CommitChangelistDialog2" timestamp="1577616807938">
+    <state x="566" y="63" key="CommitChangelistDialog2" timestamp="1577617783028">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="566" y="63" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1577616807938" />
+    <state x="566" y="63" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1577617783028" />
     <state x="100" y="123" width="1720" height="857" key="DiffContextDialog" timestamp="1577612897843">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -208,10 +217,18 @@
     </state>
     <state width="1920" height="293" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577601361112" />
     <state width="1920" height="278" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1577606315561" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1577617460577">
+    <state x="690" y="290" width="540" height="540" key="StructurePopup" timestamp="1577617798539">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1577617460577" />
+    <state x="690" y="290" width="540" height="540" key="StructurePopup/0.23.1920.1057@0.23.1920.1057" timestamp="1577617798539" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1577618618447">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1577618618447" />
+    <state x="560" y="287" key="Vcs.Push.Dialog.v2" timestamp="1577617784130">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="560" y="287" key="Vcs.Push.Dialog.v2/0.23.1920.1057@0.23.1920.1057" timestamp="1577617784130" />
     <state x="630" y="292" width="659" height="518" key="find.popup" timestamp="1577605423186">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -220,10 +237,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="835" y="415" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577600790672" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1577611768540">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1577619947450">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="625" y="240" width="670" height="691" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577601337474" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577611768540" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577619947450" />
   </component>
 </project>

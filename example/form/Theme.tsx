@@ -10,6 +10,7 @@ import TitleField from './TitleField';
 import FieldTemplate from './FieldTemplate';
 import ObjectFieldTemplate from './ObjectFieldTemplate';
 import ArrayFieldTemplate from './ArrayFieldTemplate';
+import ErrorList from './ErrorList';
 
 const Theme: ThemeProps = {
   widgets: {
@@ -28,6 +29,7 @@ const Theme: ThemeProps = {
   FieldTemplate,
   ObjectFieldTemplate,
   ArrayFieldTemplate,
+  ErrorList,
 };
 
 export default Theme;

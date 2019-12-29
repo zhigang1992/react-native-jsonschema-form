@@ -11,7 +11,7 @@ const defaultProps: FormContextProps = {
   theme: {
     primaryColor: 'blue',
   },
-  requiredTitle: '* Required',
+  requiredTitle: '*Required',
 };
 
 export const FormContext = createContext<FormContextProps>(defaultProps);

@@ -11,18 +11,31 @@ const schema = {
     Root: {
       type: 'object',
       properties: {
+        title: {
+          type: 'string',
+          description: 'Text component description',
+          title: 'Text Input',
+        },
+        description: {
+          type: 'string',
+          description: 'Text area description',
+          title: 'Text Area',
+        },
+        password: {
+          type: 'string',
+          description: 'Password description',
+          title: 'Password',
+        },
+        percentage: {
+          type: 'number',
+          description: 'A number with slider',
+          title: 'Slider',
+        },
         select: {
           type: 'string',
           enum: ['Option A', 'Option B', 'Option C'],
           description: 'This is a description',
           title: 'Title',
-        },
-        arary: {
-          type: 'array',
-          items: {
-            type: 'string',
-          },
-          maxItems: 2,
         },
         multiselect: {
           type: 'array',
@@ -34,22 +47,47 @@ const schema = {
           title: 'MultiSelect',
           uniqueItems: true,
         },
+        array: {
+          type: 'array',
+          items: {
+            type: 'string',
+          },
+          minItems: 1,
+          maxItems: 4,
+        },
       },
-      required: ['select', 'arary', 'multiselect'],
+      required: [
+        'title',
+        'description',
+        'password',
+        'percentage',
+        'select',
+        'multiselect',
+        'array',
+      ],
       additionalProperties: false,
     },
   },
 } as any;
 
 const uiSchema = {
+  description: {
+    'ui:widget': 'textarea',
+  },
+  password: {
+    'ui:widget': 'password',
+  },
+  percentage: {
+    'ui:widget': 'range',
+  },
   multiselect: {
     'ui:widget': 'checkboxes',
   },
-  array: {
-    items: {
-      'ui:widget': 'select',
-    },
-  },
+  // array: {
+  //   items: {
+  //     'ui:widget': 'select',
+  //   },
+  // },
   // hello: {
   //   'ui:widget': 'textarea',
   // },

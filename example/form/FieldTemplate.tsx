@@ -48,9 +48,10 @@ const styles = StyleSheet.create({
     borderBottomColor: 'rgba(0,0,0,0.12)',
   },
   formError: {
-    backgroundColor: 'red',
+    backgroundColor: '#fadee2',
   },
   error: {
+    marginTop: 5,
     color: 'red',
   },
   description: {
