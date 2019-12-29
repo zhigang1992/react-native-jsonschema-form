@@ -1,9 +1,7 @@
 import React from 'react';
-
-import {FieldProps} from 'react-jsonschema-form';
 import {StyleSheet, Text} from 'react-native';
 
-const DescriptionField = ({description}: FieldProps) => {
+const DescriptionField = ({description}: {description?: string}) => {
   if (description) {
     return <Text style={styles.description}>{description}</Text>;
   }
@@ -12,6 +10,7 @@ const DescriptionField = ({description}: FieldProps) => {
 
 const styles = StyleSheet.create({
   description: {
+    marginTop: 5,
     fontSize: 14,
     color: '#999999',
   },

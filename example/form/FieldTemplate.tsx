@@ -2,6 +2,8 @@ import {FieldTemplateProps} from 'react-jsonschema-form';
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useContext} from 'react';
 import {FormContext} from './FormContext';
+import TitleField from './TitleField';
+import DescriptionField from './DescriptionField';
 
 const FieldTemplate = ({
   label,
@@ -12,7 +14,6 @@ const FieldTemplate = ({
   required,
   rawDescription,
 }: FieldTemplateProps) => {
-  const context = useContext(FormContext);
   return (
     <View
       style={[
@@ -20,15 +21,10 @@ const FieldTemplate = ({
         rawErrors.length > 0 && styles.formError,
       ]}>
       {displayLabel && label ? (
-        <Text style={styles.label}>
-          {label}
-          {required && (
-            <Text style={styles.required}> {context.requiredTitle}</Text>
-          )}
-        </Text>
+        <TitleField title={label} required={required} />
       ) : null}
       {displayLabel && rawDescription ? (
-        <Text style={styles.description}>{rawDescription}</Text>
+        <DescriptionField description={rawDescription} />
       ) : null}
       {children}
       {rawErrors.length > 0 && (
@@ -57,18 +53,9 @@ const styles = StyleSheet.create({
   error: {
     color: 'red',
   },
-  label: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: 'black',
-    lineHeight: 22,
-  },
   description: {
     fontSize: 14,
     color: '#999999',
-  },
-  required: {
-    color: '#F51A51',
   },
 });
 

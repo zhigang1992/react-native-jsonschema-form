@@ -1,10 +1,15 @@
 import React, {useContext} from 'react';
 
-import {FieldProps} from 'react-jsonschema-form';
 import {StyleSheet, Text} from 'react-native';
 import {FormContext} from './FormContext';
 
-const TitleField = ({title, required}: FieldProps) => {
+const TitleField = ({
+  title,
+  required,
+}: {
+  title?: string;
+  required?: boolean;
+}) => {
   const context = useContext(FormContext);
   return (
     <Text style={styles.title}>

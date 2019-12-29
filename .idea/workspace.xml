@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4653630-ea76-4b70-8879-15afbfe60f18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/form/TextareaWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/form/CheckboxWidget.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/form/CheckboxesWidget.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/form/DescriptionField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form/DescriptionField.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/form/FieldTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form/FieldTemplate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/form/TextWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form/TextWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/form/TitleField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form/TitleField.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +98,7 @@
       <updated>1577541787124</updated>
       <workItem from="1577541788368" duration="1170000" />
       <workItem from="1577548615377" duration="1139000" />
-      <workItem from="1577599218203" duration="7026000" />
+      <workItem from="1577599218203" duration="9209000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add basic Text">
       <created>1577606313657</created>
@@ -105,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577606313657</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: add text area">
+      <created>1577607191844</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577607191844</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,13 +122,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add basic Text" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add basic Text" />
+    <MESSAGE value="feat: add text area" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add text area" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="566" y="63" key="CommitChangelistDialog2" timestamp="1577606313554">
+    <state x="566" y="63" key="CommitChangelistDialog2" timestamp="1577607191742">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="566" y="63" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1577606313554" />
+    <state x="566" y="63" key="CommitChangelistDialog2/0.23.1920.1057@0.23.1920.1057" timestamp="1577607191742" />
     <state width="1920" height="278" key="GridCell.Tab.0.bottom" timestamp="1577606315561">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -140,10 +150,10 @@
     </state>
     <state width="1920" height="293" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577601361112" />
     <state width="1920" height="278" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1577606315561" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1577606674108">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1577609212349">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1577606674108" />
+    <state width="500" height="445" key="SwitcherDM/0.23.1920.1057@0.23.1920.1057" timestamp="1577609212349" />
     <state x="630" y="292" width="659" height="518" key="find.popup" timestamp="1577605423186">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -152,10 +162,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="835" y="415" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577600790672" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1577607028124">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1577608251523">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="625" y="240" width="670" height="691" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577601337474" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577607028124" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1577608251523" />
   </component>
 </project>

@@ -7,6 +7,8 @@ import TextWidget from './form/TextWidget';
 import TitleField from './form/TitleField';
 import ObjectFieldTemplate from './form/ObjectFieldTemplate';
 import TextareaWidget from './form/TextareaWidget';
+import CheckboxWidget from './form/CheckboxWidget';
+import CheckboxesWidget from "./form/CheckboxesWidget";
 
 const schema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -22,9 +24,18 @@ const schema = {
           title: '牛',
         },
         world: {
-          type: 'string',
+          type: 'boolean',
           description: 'This is a description',
           title: 'Sup',
+        },
+        multipleChoicesList: {
+          type: 'array',
+          title: 'A multiple choices list',
+          items: {
+            type: 'string',
+            enum: ['foo', 'bar', 'fuzz', 'qux'],
+          },
+          uniqueItems: true,
         },
       },
       required: ['hello'],
@@ -37,12 +48,17 @@ const uiSchema = {
   hello: {
     'ui:widget': 'textarea',
   },
+  multipleChoicesList: {
+    'ui:widget': 'checkboxes',
+  },
 } as any;
 
 const Theme: ThemeProps = {
   widgets: {
     TextWidget,
     TextareaWidget,
+    CheckboxWidget,
+    CheckboxesWidget,
   },
   fields: {
     TitleField,
