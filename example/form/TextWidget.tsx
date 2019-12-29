@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {WidgetProps} from 'react-jsonschema-form';
 import {StyleSheet, TextInput} from 'react-native';
@@ -14,10 +14,12 @@ const TextWidget = ({
   onFocus,
   autofocus,
   options,
-}: WidgetProps) => {
+  multiline,
+}: WidgetProps & {multiline?: boolean}) => {
+  const [focused, setFocused] = useState(false);
   return (
     <TextInput
-      multiline={false}
+      multiline={multiline}
       placeholder={label}
       autoFocus={autofocus}
       editable={!disabled && !readonly}
@@ -25,9 +27,19 @@ const TextWidget = ({
       onChangeText={newText =>
         onChange(newText === '' ? options.emptyValue : newText)
       }
-      onBlur={() => onBlur(id, value)}
-      onFocus={() => onFocus(id, value)}
-      style={styles.input}
+      onBlur={() => {
+        setFocused(false);
+        onBlur(id, value);
+      }}
+      onFocus={() => {
+        setFocused(true);
+        onFocus(id, value);
+      }}
+      style={[
+        styles.input,
+        multiline && styles.multiline,
+        focused && styles.focused,
+      ]}
     />
   );
 };
@@ -37,11 +49,19 @@ const styles = StyleSheet.create({
     borderColor: '#979B9E',
     borderWidth: 1,
     paddingHorizontal: 16,
-    paddingVertical: 15,
+    paddingTop: 15,
+    paddingBottom: 15,
     borderRadius: 4,
     marginTop: 20,
     fontSize: 16,
     color: 'black',
+  },
+  multiline: {
+    minHeight: 100,
+    lineHeight: 22,
+  },
+  focused: {
+    borderColor: '#2c3e50',
   },
 });
 

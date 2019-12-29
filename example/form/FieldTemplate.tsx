@@ -14,7 +14,11 @@ const FieldTemplate = ({
 }: FieldTemplateProps) => {
   const context = useContext(FormContext);
   return (
-    <View style={[styles.container, rawErrors.length > 0 && styles.formError]}>
+    <View
+      style={[
+        displayLabel && styles.container,
+        rawErrors.length > 0 && styles.formError,
+      ]}>
       {displayLabel && label ? (
         <Text style={styles.label}>
           {label}
@@ -42,7 +46,11 @@ const FieldTemplate = ({
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    paddingBottom: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0,0,0,0.12)',
+  },
   formError: {
     backgroundColor: 'red',
   },
