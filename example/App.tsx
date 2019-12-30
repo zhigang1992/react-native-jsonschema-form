@@ -1,8 +1,7 @@
-import {withTheme} from 'react-jsonschema-form';
 import React, {useRef} from 'react';
-import {Button, ScrollView, View} from 'react-native';
-import Theme from './form/Theme';
+import {Alert, Button, ScrollView, View} from 'react-native';
 import {defaultProps, FormContext} from './form/FormContext';
+import ReactNativeForm from './form/ReactNativeForm';
 
 const schema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -83,21 +82,10 @@ const uiSchema = {
   multiselect: {
     'ui:widget': 'checkboxes',
   },
-  // array: {
-  //   items: {
-  //     'ui:widget': 'select',
-  //   },
-  // },
 } as any;
 
-const Form = withTheme(Theme);
-
-const Test = (props: any) => (
-  <View style={{paddingHorizontal: 20}}>{props.children}</View>
-);
-
 const FormPage = () => {
-  const form = useRef<typeof Form>(null);
+  const form = useRef<any>(null);
   return (
     <FormContext.Provider
       value={{
@@ -106,20 +94,22 @@ const FormPage = () => {
       }}>
       <ScrollView style={{flex: 1}}>
         <View style={{height: 100}} />
-        <Form
-          onSubmit={data => console.log(data)}
-          // liveValidate={true}
+        <ReactNativeForm
+          ref={form}
+          onError={e => {
+            console.log(e);
+            Alert.alert('Please check your form');
+          }}
           schema={schema}
           uiSchema={uiSchema}
-          {...{tagName: Test}}
-          onChange={c => console.log(c.formData)}>
+          onSubmit={form => console.log(form.formData)}>
           <Button
             title="Submit"
             onPress={() => {
-              console.log(form.current.name);
+              form.current?.submit();
             }}
           />
-        </Form>
+        </ReactNativeForm>
         <View style={{height: 100}} />
       </ScrollView>
     </FormContext.Provider>
