@@ -1,8 +1,8 @@
 import {withTheme} from 'react-jsonschema-form';
-import React from 'react';
-import {getDefaultRegistry} from 'react-jsonschema-form/lib/utils';
-import {ScrollView, Text, View} from 'react-native';
+import React, {useRef} from 'react';
+import {Button, ScrollView, View} from 'react-native';
 import Theme from './form/Theme';
+import {defaultProps, FormContext} from './form/FormContext';
 
 const schema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -88,18 +88,6 @@ const uiSchema = {
   //     'ui:widget': 'select',
   //   },
   // },
-  // hello: {
-  //   'ui:widget': 'textarea',
-  // },
-  // worldRadio: {
-  //   'ui:widget': 'radio',
-  // },
-  // password: {
-  //   'ui:widget': 'password',
-  // },
-  // multipleChoicesList: {
-  //   'ui:widget': 'checkboxes',
-  // },
 } as any;
 
 const Form = withTheme(Theme);
@@ -109,17 +97,32 @@ const Test = (props: any) => (
 );
 
 const FormPage = () => {
+  const form = useRef<typeof Form>(null);
   return (
-    <ScrollView style={{flex: 1}}>
-      <View style={{height: 100}} />
-      <Form
-        schema={schema}
-        uiSchema={uiSchema}
-        {...{tagName: Test}}
-        onChange={c => console.log(c.formData)}>
-        <Text>{JSON.stringify(Object.keys(getDefaultRegistry().widgets))}</Text>
-      </Form>
-    </ScrollView>
+    <FormContext.Provider
+      value={{
+        ...defaultProps,
+        requiredTitle: '(必填)',
+      }}>
+      <ScrollView style={{flex: 1}}>
+        <View style={{height: 100}} />
+        <Form
+          onSubmit={data => console.log(data)}
+          // liveValidate={true}
+          schema={schema}
+          uiSchema={uiSchema}
+          {...{tagName: Test}}
+          onChange={c => console.log(c.formData)}>
+          <Button
+            title="Submit"
+            onPress={() => {
+              console.log(form.current.name);
+            }}
+          />
+        </Form>
+        <View style={{height: 100}} />
+      </ScrollView>
+    </FormContext.Provider>
   );
 };
 

@@ -7,7 +7,7 @@ interface FormContextProps {
   requiredTitle: string;
 }
 
-const defaultProps: FormContextProps = {
+export const defaultProps: FormContextProps = {
   theme: {
     primaryColor: 'blue',
   },
