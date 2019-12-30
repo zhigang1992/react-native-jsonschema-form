@@ -5,6 +5,9 @@ interface FormContextProps {
     primaryColor: string;
   };
   requiredTitle: string;
+  arrayAddTitle: string;
+  radioLabelMapping?: (label: string) => string;
+  errorMapping?: (e: any) => void;
 }
 
 export const defaultProps: FormContextProps = {
@@ -12,6 +15,7 @@ export const defaultProps: FormContextProps = {
     primaryColor: 'blue',
   },
   requiredTitle: '*Required',
+  arrayAddTitle: 'Add',
 };
 
 export const FormContext = createContext<FormContextProps>(defaultProps);

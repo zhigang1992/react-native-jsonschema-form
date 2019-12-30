@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-native-community/slider": "^2.0.8",
+    "ajv-i18n": "^3.5.0",
     "react": "16.9.0",
     "react-native": "0.61.5"
   },

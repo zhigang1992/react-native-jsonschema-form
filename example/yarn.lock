@@ -1223,6 +1223,11 @@ acorn@^7.1.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.0.tgz#949d36f2c292535da602283586c2477c57eb2d6c"
   integrity sha512-kL5CuoXA/dgxlBbVrflsflzQ3PAas7RYZB52NOm/6839iVYJgKMJ3cQJD+t2i5+qFa8h3MDpEOJiS64E8JLnSQ==
 
+ajv-i18n@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/ajv-i18n/-/ajv-i18n-3.5.0.tgz#63235ebc8779ac50cfa320aa123d93a0d6911b00"
+  integrity sha512-IR8uhRH0La4DweKHqBOVeoNo2prJ3bowWzGtNS3uDvYv5wKLgH/WQsoh6gHPVxTWXCGr+R+6I5vXDSXGAYnNPA==
+
 ajv@^6.10.0, ajv@^6.10.2, ajv@^6.5.5, ajv@^6.7.0:
   version "6.10.2"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.10.2.tgz#d3cea04d6b017b2894ad69040fec8b623eb4bd52"

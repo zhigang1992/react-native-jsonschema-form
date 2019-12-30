@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import {
   isMultiSelect,
@@ -16,6 +16,7 @@ import {
   Image,
 } from 'react-native';
 import DescriptionField from './DescriptionField';
+import {FormContext} from './FormContext';
 
 const ArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
   const {schema, registry = getDefaultRegistry()} = props;
@@ -118,6 +119,24 @@ const DefaultArrayItem = (props: any) => {
   );
 };
 
+const AddButton = (props: {
+  onPress: (event: any) => void;
+  disabled?: boolean;
+}) => {
+  const context = useContext(FormContext);
+  return (
+    <TouchableOpacity
+      style={styles.addButton}
+      onPress={e => {
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        props.onPress(e);
+      }}
+      disabled={props.disabled}>
+      <Text style={styles.addButtonText}>{context.arrayAddTitle}</Text>
+    </TouchableOpacity>
+  );
+};
+
 const DefaultFixedArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
   return (
     <View style={styles.container}>
@@ -142,17 +161,10 @@ const DefaultFixedArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
       </View>
 
       {props.canAdd && (
-        <TouchableOpacity
-          style={styles.addButton}
-          onPress={e => {
-            LayoutAnimation.configureNext(
-              LayoutAnimation.Presets.easeInEaseOut,
-            );
-            props.onAddClick(e);
-          }}
-          disabled={props.disabled || props.readonly}>
-          <Text style={styles.addButtonText}>Add</Text>
-        </TouchableOpacity>
+        <AddButton
+          disabled={props.disabled || props.readonly}
+          onPress={props.onAddClick}
+        />
       )}
     </View>
   );
@@ -185,17 +197,10 @@ const DefaultNormalArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
       </View>
 
       {props.canAdd && (
-        <TouchableOpacity
-          style={styles.addButton}
-          onPress={e => {
-            LayoutAnimation.configureNext(
-              LayoutAnimation.Presets.easeInEaseOut,
-            );
-            props.onAddClick(e);
-          }}
-          disabled={props.disabled || props.readonly}>
-          <Text style={styles.addButtonText}>Add</Text>
-        </TouchableOpacity>
+        <AddButton
+          disabled={props.disabled || props.readonly}
+          onPress={props.onAddClick}
+        />
       )}
     </View>
   );

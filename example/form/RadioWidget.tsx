@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import {WidgetProps} from 'react-jsonschema-form';
 import {BooleanToggleRow} from './CheckboxWidget';
 import {StyleSheet, View} from 'react-native';
+import {FormContext} from './FormContext';
 
 const RadioWidget = ({
-  schema,
   options,
   value,
   disabled,
@@ -15,6 +15,8 @@ const RadioWidget = ({
   const {enumOptions, enumDisabled} = options;
 
   const _onChange = (newValue: any) => onChange(newValue);
+
+  const context = useContext(FormContext);
 
   return (
     <View style={styles.container}>
@@ -27,7 +29,11 @@ const RadioWidget = ({
             key={i}
             onChange={() => _onChange(option.value)}
             selected={option.value === value}
-            label={option.label}
+            label={
+              context.radioLabelMapping
+                ? context.radioLabelMapping(option.label)
+                : option.label
+            }
             disabled={disabled || itemDisabled || readonly}
           />
         );

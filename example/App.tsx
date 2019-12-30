@@ -10,6 +10,11 @@ const schema = {
     Root: {
       type: 'object',
       properties: {
+        boolean: {
+          type: 'boolean',
+          description: 'Text component description',
+          title: 'Text Input',
+        },
         title: {
           type: 'string',
           description: 'Text component description',
@@ -70,6 +75,9 @@ const schema = {
 } as any;
 
 const uiSchema = {
+  boolean: {
+    'ui:widget': 'radio',
+  },
   description: {
     'ui:widget': 'textarea',
   },
@@ -91,6 +99,16 @@ const FormPage = () => {
       value={{
         ...defaultProps,
         requiredTitle: '(必填)',
+        arrayAddTitle: '添加',
+        radioLabelMapping(input) {
+          if (input.toLowerCase() === 'yes') {
+            return '是';
+          } else if (input.toLowerCase() === 'no') {
+            return '否';
+          } else {
+            return input;
+          }
+        },
       }}>
       <ScrollView style={{flex: 1}}>
         <View style={{height: 100}} />
