@@ -1,27 +1,20 @@
-import React, {useContext, useMemo} from 'react';
+import React from 'react';
 
 import {ErrorListProps} from 'react-jsonschema-form';
 import {StyleSheet, Text, View} from 'react-native';
-import {FormContext} from './FormContext';
 
-const ErrorList = ({errors}: ErrorListProps) => {
-  const context = useContext(FormContext);
-  useMemo(() => {
-    context.ajvErrorMapping?.(errors);
-  }, [errors, context.ajvErrorMapping]);
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Errors</Text>
-      {errors.map((error, i: number) => {
-        return (
-          <Text style={styles.error} key={i}>
-            {error.message}
-          </Text>
-        );
-      })}
-    </View>
-  );
-};
+const ErrorList = ({errors}: ErrorListProps) => (
+  <View style={styles.container}>
+    <Text style={styles.title}>Errors</Text>
+    {errors.map((error, i: number) => {
+      return (
+        <Text style={styles.error} key={i}>
+          {error.stack}
+        </Text>
+      );
+    })}
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {

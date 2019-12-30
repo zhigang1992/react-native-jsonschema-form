@@ -7,7 +7,6 @@ interface FormContextProps {
   requiredTitle: string;
   arrayAddTitle: string;
   radioLabelMapping?: (label: string) => string;
-  errorMapping?: (e: any) => void;
 }
 
 export const defaultProps: FormContextProps = {
