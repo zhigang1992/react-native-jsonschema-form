@@ -1,114 +1,34 @@
-import React, {useRef} from 'react';
-import {Alert, Button, ScrollView, View} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+import {Alert, Button, ScrollView, View, Text} from 'react-native';
 import {defaultProps, FormContext} from './form/FormContext';
 import ReactNativeForm from './form/ReactNativeForm';
 
-const schema = {
-  $schema: 'http://json-schema.org/draft-07/schema#',
-  $ref: '#/definitions/Root',
-  definitions: {
-    Root: {
-      type: 'object',
-      properties: {
-        boolean: {
-          type: 'boolean',
-          description: 'Text component description',
-          title: 'Text Input',
-        },
-        title: {
-          type: 'string',
-          description: 'Text component description',
-          title: 'Text Input',
-        },
-        description: {
-          type: 'string',
-          description: 'Text area description',
-          title: 'Text Area',
-        },
-        password: {
-          type: 'string',
-          description: 'Password description',
-          title: 'Password',
-        },
-        percentage: {
-          type: 'number',
-          description: 'A number with slider',
-          title: 'Slider',
-        },
-        select: {
-          type: 'string',
-          enum: ['Option A', 'Option B', 'Option C'],
-          description: 'This is a description',
-          title: 'Title',
-        },
-        multiselect: {
-          type: 'array',
-          items: {
-            type: 'string',
-            enum: ['Option A', 'Option B', 'Option C'],
-          },
-          description: 'This is a multi select',
-          title: 'MultiSelect',
-          uniqueItems: true,
-        },
-        array: {
-          type: 'array',
-          items: {
-            type: 'string',
-          },
-          minItems: 1,
-          maxItems: 4,
-        },
-      },
-      required: [
-        'title',
-        'description',
-        'password',
-        'percentage',
-        'select',
-        'multiselect',
-        'array',
-      ],
-      additionalProperties: false,
-    },
-  },
-} as any;
-
-const uiSchema = {
-  boolean: {
-    'ui:widget': 'radio',
-  },
-  description: {
-    'ui:widget': 'textarea',
-  },
-  password: {
-    'ui:widget': 'password',
-  },
-  percentage: {
-    'ui:widget': 'range',
-  },
-  multiselect: {
-    'ui:widget': 'checkboxes',
-  },
-} as any;
-
 const FormPage = () => {
+  const [values, setValues] = useState<any>();
   const form = useRef<any>(null);
+  useEffect(() => {
+    fetch('https://zen.reily.app/api/values/a7df9e43-4124-4f29-87d9-383b46cbcebb')
+      .then(r => r.json())
+      .then(setValues);
+  }, []);
+  if (values == null) {
+    return null;
+  }
   return (
     <FormContext.Provider
       value={{
         ...defaultProps,
-        requiredTitle: '(必填)',
-        arrayAddTitle: '添加',
-        radioLabelMapping(input) {
-          if (input.toLowerCase() === 'yes') {
-            return '是';
-          } else if (input.toLowerCase() === 'no') {
-            return '否';
-          } else {
-            return input;
-          }
-        },
+        // requiredTitle: '(必填)',
+        // arrayAddTitle: '添加',
+        // radioLabelMapping(input) {
+        //   if (input.toLowerCase() === 'yes') {
+        //     return '是';
+        //   } else if (input.toLowerCase() === 'no') {
+        //     return '否';
+        //   } else {
+        //     return input;
+        //   }
+        // },
       }}>
       <ScrollView style={{flex: 1}}>
         <View style={{height: 100}} />
@@ -118,8 +38,8 @@ const FormPage = () => {
             console.log(e);
             Alert.alert('Please check your form');
           }}
-          schema={schema}
-          uiSchema={uiSchema}
+          schema={JSON.parse(values.schema)}
+          uiSchema={JSON.parse(values.formSettings)}
           onSubmit={form => console.log(form.formData)}>
           <Button
             title="Submit"
