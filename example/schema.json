@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "properties": {
+        "toggle": {
+          "type": "boolean",
+          "description": "This is toggle description",
+          "title": "Toggle"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title description"
+        },
+        "description": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "percentage": {
+          "type": "number"
+        },
+        "select": {
+          "type": "string",
+          "enum": ["Option A", "Option B", "Option C"]
+        },
+        "multiselect": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Option A", "Option B", "Option C"]
+          },
+          "uniqueItems": true
+        },
+        "array": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 4
+        },
+        "advanced": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "string",
+                  "enum": ["A-1", "A-2", "A-3"]
+                }
+              },
+              "required": ["a"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "b": {
+                  "type": "string",
+                  "enum": ["B-1", "B-2", "B-3"]
+                }
+              },
+              "required": ["b"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "c": {
+                  "type": "string",
+                  "enum": ["C-1", "C-2", "C-3"]
+                }
+              },
+              "required": ["c"],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "toggle",
+        "title",
+        "description",
+        "password",
+        "percentage",
+        "select",
+        "multiselect",
+        "array",
+        "advanced"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

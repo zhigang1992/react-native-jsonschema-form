@@ -1,20 +1,28 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Alert, Button, ScrollView, View, Text} from 'react-native';
+import React, {useRef} from 'react';
+import {Alert, Button, ScrollView, View} from 'react-native';
 import ReactNativeForm, {defaultProps, FormContext} from 'rjsf-native';
+import schema from './schema.json';
+
+const uiSchema = {
+  toggle: {
+    'ui:widget': 'radio',
+  },
+  description: {
+    'ui:widget': 'textarea',
+  },
+  password: {
+    'ui:widget': 'password',
+  },
+  percentage: {
+    'ui:widget': 'range',
+  },
+  multiselect: {
+    'ui:widget': 'checkboxes',
+  },
+};
 
 const FormPage = () => {
-  const [values, setValues] = useState<any>();
   const form = useRef<any>(null);
-  useEffect(() => {
-    fetch(
-      'https://zen.reily.app/api/values/a7df9e43-4124-4f29-87d9-383b46cbcebb',
-    )
-      .then(r => r.json())
-      .then(setValues);
-  }, []);
-  if (values == null) {
-    return null;
-  }
   return (
     <FormContext.Provider
       value={{
@@ -39,8 +47,8 @@ const FormPage = () => {
             console.log(e);
             Alert.alert('Please check your form');
           }}
-          schema={JSON.parse(values.schema)}
-          uiSchema={JSON.parse(values.formSettings)}
+          schema={schema}
+          uiSchema={uiSchema}
           onSubmit={form => console.log(form.formData)}>
           <Button
             title="Submit"
