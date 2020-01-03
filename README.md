@@ -1,5 +1,12 @@
 ### react-json-schema-form themed for react-native
 
+```bash
+yarn add rjsf-native
+# This package also depends on `@react-native-community/slider`
+yarn add @react-native-community/slider
+# and link and pod install since it's a native library
+```
+
 ```typescript
 import ReactNativeForm from 'rjsf-native';
 
