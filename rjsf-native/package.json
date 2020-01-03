@@ -1,6 +1,6 @@
 {
   "name": "rjsf-native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -20,10 +20,10 @@
     "react-native": "*"
   },
   "devDependencies": {
-    "@types/react": "^16.9.17",
-    "@types/react-native": "^0.60.27",
-    "@types/react-jsonschema-form": "^1.6.7",
     "@react-native-community/slider": "^2.0.8",
+    "@types/react": "^16.9.17",
+    "@types/react-jsonschema-form": "^1.6.7",
+    "@types/react-native": "^0.60.27",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "typescript": "^3.7.4"
