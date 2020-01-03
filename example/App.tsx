@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Alert, Button, ScrollView, View} from 'react-native';
+import {Alert, Button, ScrollView, StyleSheet, View} from 'react-native';
 import ReactNativeForm, {defaultProps, FormContext} from 'rjsf-native';
 import schema from './schema.json';
 
@@ -39,28 +39,39 @@ const FormPage = () => {
         //   }
         // },
       }}>
-      <ScrollView style={{flex: 1}}>
-        <View style={{height: 100}} />
+      <ScrollView style={styles.container}>
+        <View style={styles.spacer} />
         <ReactNativeForm
           ref={form}
           onError={e => {
             console.log(e);
             Alert.alert('Please check your form');
           }}
-          schema={schema}
+          schema={schema as any}
           uiSchema={uiSchema}
-          onSubmit={form => console.log(form.formData)}>
+          onSubmit={f => console.log(f.formData)}>
           <Button
             title="Submit"
             onPress={() => {
-              form.current?.submit();
+              if (form.current) {
+                form.current.submit();
+              }
             }}
           />
         </ReactNativeForm>
-        <View style={{height: 100}} />
+        <View style={styles.spacer} />
       </ScrollView>
     </FormContext.Provider>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  spacer: {
+    height: 100,
+  },
+});
 
 export default FormPage;
