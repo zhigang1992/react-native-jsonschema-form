@@ -1,0 +1,31 @@
+{
+  "name": "rjsf-native",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "lib/*",
+    "assets/*"
+  ],
+  "scripts": {
+    "build": "rm -rf lib/ && tsc"
+  },
+  "dependencies": {
+    "react-jsonschema-form": "^1.8.1"
+  },
+  "peerDependencies": {
+    "@react-native-community/slider": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-native": "^0.60.27",
+    "@types/react-jsonschema-form": "^1.6.7",
+    "@react-native-community/slider": "^2.0.8",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "typescript": "^3.7.4"
+  }
+}

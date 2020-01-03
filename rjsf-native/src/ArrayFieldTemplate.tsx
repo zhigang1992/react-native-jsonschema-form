@@ -89,7 +89,7 @@ const DefaultArrayItem = (props: any) => {
               );
               props.onReorderClick(props.index, props.index - 1)();
             }}>
-            <Image source={require('./assets/ReorderUp.png')} />
+            <Image source={require('../assets/ReorderUp.png')} />
           </TouchableOpacity>
         )}
         {props.hasMoveDown && (
@@ -98,7 +98,7 @@ const DefaultArrayItem = (props: any) => {
             onPress={() => {
               props.onReorderClick(props.index, props.index + 1)();
             }}>
-            <Image source={require('./assets/ReorderDown.png')} />
+            <Image source={require('../assets/ReorderDown.png')} />
           </TouchableOpacity>
         )}
         {props.hasRemove && (
@@ -111,7 +111,7 @@ const DefaultArrayItem = (props: any) => {
               );
               props.onDropIndexClick(props.index)();
             }}>
-            <Image source={require('./assets/arrayDelete.png')} />
+            <Image source={require('../assets/arrayDelete.png')} />
           </TouchableOpacity>
         )}
       </View>

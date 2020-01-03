@@ -38,8 +38,8 @@ export const CheckBoxComponent = (props: {
 }) => (
   <BooleanToggleRow
     {...props}
-    on={require('./assets/checkboxOn.png')}
-    off={require('./assets/checkboxOff.png')}
+    on={require('../assets/checkboxOn.png')}
+    off={require('../assets/checkboxOff.png')}
   />
 );
 

@@ -56,8 +56,8 @@ const RadioComponent = (props: {
 }) => (
   <BooleanToggleRow
     {...props}
-    on={require('./assets/radioOn.png')}
-    off={require('./assets/radioOff.png')}
+    on={require('../assets/radioOn.png')}
+    off={require('../assets/radioOff.png')}
   />
 );
 

@@ -1,3 +1,5 @@
+export * from './FormContext';
+
 import {StyleSheet, View} from 'react-native';
 import React, {Component, forwardRef} from 'react';
 import Form from 'react-jsonschema-form';
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const ReactNativeForm: typeof Form = forwardRef(
+const Index: typeof Form = forwardRef(
   ({fields, widgets, ...directProps}: any, ref) => {
     return (
       <Form
@@ -42,4 +44,4 @@ const ReactNativeForm: typeof Form = forwardRef(
   },
 ) as any;
 
-export default ReactNativeForm;
+export default Index;

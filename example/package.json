@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package && rm -rf node_modules/rjsf-native/node_modules"
   },
   "dependencies": {
     "@react-native-community/slider": "^2.0.8",
@@ -16,7 +16,8 @@
     "patch-package": "^6.2.0",
     "postinstall-postinstall": "^2.0.0",
     "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react-native": "0.61.5",
+    "rjsf-native": "file:../rjsf-native"
   },
   "peerDependencies": {
     "react-jsonschema-form": "^1.8.1"

@@ -1,13 +1,14 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Alert, Button, ScrollView, View, Text} from 'react-native';
-import {defaultProps, FormContext} from './form/FormContext';
-import ReactNativeForm from './form/ReactNativeForm';
+import ReactNativeForm, {defaultProps, FormContext} from 'rjsf-native';
 
 const FormPage = () => {
   const [values, setValues] = useState<any>();
   const form = useRef<any>(null);
   useEffect(() => {
-    fetch('https://zen.reily.app/api/values/a7df9e43-4124-4f29-87d9-383b46cbcebb')
+    fetch(
+      'https://zen.reily.app/api/values/a7df9e43-4124-4f29-87d9-383b46cbcebb',
+    )
       .then(r => r.json())
       .then(setValues);
   }, []);
