@@ -2,42 +2,36 @@ import React from 'react';
 
 import {ObjectFieldTemplateProps} from 'react-jsonschema-form';
 import {StyleSheet, View} from 'react-native';
+import DescriptionField from './DescriptionField';
+import TitleField from './TitleField';
 
 const ObjectFieldTemplate = ({
-  DescriptionField,
   description,
-  TitleField,
   title,
   properties,
   required,
   uiSchema,
-  idSchema,
 }: ObjectFieldTemplateProps) => {
   return (
-    <>
+    <View style={styles.container}>
       {(uiSchema['ui:title'] || title) && (
-        <TitleField
-          id={`${idSchema.$id}-title`}
-          title={title}
-          required={required}
-        />
+        <TitleField title={title} required={required} />
       )}
-      {description && (
-        <DescriptionField
-          id={`${idSchema.$id}-description`}
-          description={description}
-        />
-      )}
+      {description && <DescriptionField description={description} />}
       {properties.map((element: any, index: number) => (
         <View key={index} style={styles.element}>
           {element.content}
         </View>
       ))}
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    paddingTop: 20,
+    paddingLeft: 10,
+  },
   element: {
     marginBottom: 10,
   },

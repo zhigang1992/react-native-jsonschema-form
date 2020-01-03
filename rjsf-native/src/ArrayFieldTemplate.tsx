@@ -70,12 +70,6 @@ const ArrayFieldDescription = ({
 
 // Used in the two templates
 const DefaultArrayItem = (props: any) => {
-  const btnStyle = {
-    flex: 1,
-    paddingLeft: 6,
-    paddingRight: 6,
-    fontWeight: 'bold',
-  };
   return (
     <View key={props.index}>
       <View style={styles.card}>{props.children}</View>
@@ -215,7 +209,7 @@ const styles = StyleSheet.create({
   },
   card: {
     marginTop: 10,
-    padding: 15,
+    paddingLeft: 15,
     paddingBottom: 20,
     borderRadius: 5,
     backgroundColor: '#F3F3F3',
