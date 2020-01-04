@@ -5751,7 +5751,7 @@ rimraf@~2.2.6:
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
 
 "rjsf-native@file:../rjsf-native":
-  version "1.0.0"
+  version "1.0.1"
   dependencies:
     react-jsonschema-form "^1.8.1"
 

@@ -17,6 +17,13 @@ class MockHTMLForm extends Component {
   }
 }
 
+class Event {
+  preventDefault() {}
+}
+
+// @ts-ignore
+global.Event = global.Event || Event;
+
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
