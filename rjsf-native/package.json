@@ -9,7 +9,8 @@
     "assets/*"
   ],
   "scripts": {
-    "build": "rm -rf lib/ && tsc"
+    "build": "rm -rf lib/ && tsc",
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "@types/react-jsonschema-form": "^1.6.7",
