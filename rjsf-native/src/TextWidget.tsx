@@ -16,6 +16,7 @@ const TextWidget = ({
   options,
   multiline,
   secureEntry,
+  schema,
 }: WidgetProps & {multiline?: boolean; secureEntry?: boolean}) => {
   const [focused, setFocused] = useState(false);
   return (
@@ -24,7 +25,8 @@ const TextWidget = ({
       placeholder={label}
       autoFocus={autofocus}
       editable={!disabled && !readonly}
-      value={value ? value : ''}
+      keyboardType={schema.type === 'number' ? 'number-pad' : 'default'}
+      value={value ? value.toString() : ''}
       secureTextEntry={secureEntry}
       onChangeText={newText =>
         onChange(newText === '' ? options.emptyValue : newText)
