@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Index: typeof Form = forwardRef(
+const Index: Form<any> = forwardRef(
   ({fields, widgets, ...directProps}: any, ref) => {
     return (
       <Form
