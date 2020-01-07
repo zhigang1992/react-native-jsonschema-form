@@ -12,7 +12,8 @@
     "build": "rm -rf lib/ && tsc"
   },
   "dependencies": {
-    "react-jsonschema-form": "^1.8.1"
+    "react-jsonschema-form": "^1.8.1",
+    "@types/react-jsonschema-form": "^1.6.7"
   },
   "peerDependencies": {
     "@react-native-community/slider": "*",

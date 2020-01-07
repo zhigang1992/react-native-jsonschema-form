@@ -30,7 +30,7 @@ const ObjectFieldTemplate = ({
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
-    paddingLeft: 10,
+    paddingLeft: 5,
   },
   element: {
     marginBottom: 10,
