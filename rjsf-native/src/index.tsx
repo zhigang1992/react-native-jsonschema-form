@@ -26,7 +26,8 @@ global.Event = global.Event || Event;
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 10,
+    paddingLeft: 10,
+    paddingRight: 15,
   },
 });
 
