@@ -1,8 +1,8 @@
 {
   "name": "rjsf-native",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "lib/index.js",
-  "types": "lib/types.d.ts",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "files": [
     "lib/*",
