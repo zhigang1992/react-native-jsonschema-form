@@ -15,5 +15,6 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "version": "0.0.0"
 }
