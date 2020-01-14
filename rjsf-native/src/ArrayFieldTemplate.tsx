@@ -17,6 +17,7 @@ import {
 } from 'react-native';
 import DescriptionField from './DescriptionField';
 import {FormContext} from './FormContext';
+import TitleField from './TitleField';
 
 const ArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
   const {schema, registry = getDefaultRegistry()} = props;
@@ -35,18 +36,12 @@ type ArrayFieldTitleProps = {
   required: boolean;
 };
 
-const ArrayFieldTitle = ({
-  TitleField,
-  idSchema,
-  title,
-  required,
-}: ArrayFieldTitleProps) => {
+const ArrayFieldTitle = ({idSchema, title, required}: ArrayFieldTitleProps) => {
   if (!title) {
     return null;
   }
 
-  const id = `${idSchema.$id}__title`;
-  return <TitleField id={id} title={title} required={required} />;
+  return <TitleField title={title} required={required} />;
 };
 
 type ArrayFieldDescriptionProps = {
@@ -56,7 +51,6 @@ type ArrayFieldDescriptionProps = {
 };
 
 const ArrayFieldDescription = ({
-  DescriptionField,
   idSchema,
   description,
 }: ArrayFieldDescriptionProps) => {
@@ -65,7 +59,7 @@ const ArrayFieldDescription = ({
   }
 
   const id = `${idSchema.$id}__description`;
-  return <DescriptionField id={id} description={description} />;
+  return <DescriptionField description={description} />;
 };
 
 // Used in the two templates
