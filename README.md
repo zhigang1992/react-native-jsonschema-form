@@ -1,4 +1,4 @@
-### react-json-schema-form themed for react-native
+### [react-json-schema-form](https://github.com/rjsf-team/react-jsonschema-form) themed for react-native
 
 ```bash
 yarn add rjsf-native
