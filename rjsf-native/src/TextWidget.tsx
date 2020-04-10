@@ -25,10 +25,10 @@ const TextWidget = ({
       placeholder={label}
       autoFocus={autofocus}
       editable={!disabled && !readonly}
-      keyboardType={schema.type === 'number' ? 'number-pad' : 'default'}
+      keyboardType={schema.type === 'number' ? 'numeric' : 'default'}
       value={value ? value.toString() : ''}
       secureTextEntry={secureEntry}
-      onChangeText={newText =>
+      onChangeText={(newText) =>
         onChange(newText === '' ? options.emptyValue : newText)
       }
       onBlur={() => {
