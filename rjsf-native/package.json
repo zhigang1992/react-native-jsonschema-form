@@ -10,11 +10,11 @@
     "assets/*"
   ],
   "scripts": {
-    "build": "rm -rf lib/ && tsc",
+    "build": "rimraf lib/ && tsc",
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "@types/react-jsonschema-form": "^1.7.2",
+    "@types/react-jsonschema-form": "^1.7.3",
     "react-jsonschema-form": "^1.8.1"
   },
   "peerDependencies": {
@@ -23,12 +23,10 @@
     "react-native": "*"
   },
   "devDependencies": {
-    "@react-native-community/slider": "^2.0.9",
+    "@react-native-community/slider": "^3.0.0",
     "@types/react": "^16.9.34",
-    "@types/react-jsonschema-form": "^1.6.7",
     "@types/react-native": "^0.62.2",
-    "react": "16.13.1",
-    "react-native": "0.62.2",
+    "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
   }
 }
