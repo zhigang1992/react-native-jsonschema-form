@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {WidgetProps} from 'react-jsonschema-form';
+import {WidgetProps} from '@rjsf/core';
 import {
   Image,
   ImageSourcePropType,

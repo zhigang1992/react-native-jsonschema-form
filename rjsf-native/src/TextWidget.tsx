@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-
-import {WidgetProps} from 'react-jsonschema-form';
 import {StyleSheet, TextInput} from 'react-native';
+import {WidgetProps} from '@rjsf/core';
 
 const TextWidget = ({
   id,

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {WidgetProps} from 'react-jsonschema-form';
+import {WidgetProps} from '@rjsf/core';
 import {CheckBoxComponent} from './CheckboxWidget';
-import {View, StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 const selectValue = (value: any, selected: any, all: any) => {
   const at = all.indexOf(value);

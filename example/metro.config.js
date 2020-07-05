@@ -13,6 +13,9 @@
 const path = require('path');
 
 module.exports = {
+  projectRoot: path.resolve(__dirname),
+  // quick workaround for another issue with symlinks
+  watchFolders: [path.resolve(__dirname, '../rjsf-native')],
   transformer: {
     getTransformOptions: async () => ({
       transform: {
@@ -30,7 +33,4 @@ module.exports = {
       { get: (_, name) => path.resolve('.', 'node_modules', name) },
     ),
   },
-
-  // quick workaround for another issue with symlinks
-  watchFolders: ['.', '../rjsf-native'],
 };

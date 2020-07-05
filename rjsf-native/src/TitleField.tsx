@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-
 import {StyleSheet, Text} from 'react-native';
 import {FormContext} from './FormContext';
 

@@ -1,9 +1,9 @@
 import React from 'react';
-
-import {rangeSpec} from 'react-jsonschema-form/lib/utils';
-import {WidgetProps} from 'react-jsonschema-form';
-import Slider from '@react-native-community/slider';
 import {StyleSheet, Text, View} from 'react-native';
+import {WidgetProps, utils} from '@rjsf/core';
+import Slider from '@react-native-community/slider';
+
+const {rangeSpec} = utils;
 
 const RangeWidget = ({
   value,

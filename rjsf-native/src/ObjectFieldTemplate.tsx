@@ -1,7 +1,6 @@
 import React from 'react';
-
-import {ObjectFieldTemplateProps} from 'react-jsonschema-form';
 import {StyleSheet, View} from 'react-native';
+import {ObjectFieldTemplateProps} from '@rjsf/core';
 import DescriptionField from './DescriptionField';
 import TitleField from './TitleField';
 

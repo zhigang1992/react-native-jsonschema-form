@@ -13,19 +13,18 @@
     "build": "rimraf lib/ && tsc",
     "prepublish": "yarn build"
   },
-  "dependencies": {
-    "@types/react-jsonschema-form": "^1.7.3",
-    "react-jsonschema-form": "^1.8.1"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@react-native-community/slider": "*",
-    "react": "*",
-    "react-native": "*"
+    "@rjsf/core": "^2.0.0",
+    "react": ">=16",
+    "react-native": ">=60.0.0"
   },
   "devDependencies": {
     "@react-native-community/slider": "^3.0.0",
-    "@types/react": "^16.9.34",
-    "@types/react-native": "^0.62.2",
+    "@rjsf/core": "^2.2.0",
+    "@types/react": "^16.9.41",
+    "@types/react-native": "^0.62.16",
     "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
   }

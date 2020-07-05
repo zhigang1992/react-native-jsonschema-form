@@ -1,8 +1,7 @@
 import React, {useContext} from 'react';
-
-import {WidgetProps} from 'react-jsonschema-form';
-import {BooleanToggleRow} from './CheckboxWidget';
 import {StyleSheet, View} from 'react-native';
+import {WidgetProps} from '@rjsf/core';
+import {BooleanToggleRow} from './CheckboxWidget';
 import {FormContext} from './FormContext';
 
 const RadioWidget = ({

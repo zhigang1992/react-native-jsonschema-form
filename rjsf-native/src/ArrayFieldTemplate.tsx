@@ -1,23 +1,18 @@
 import React, {useContext} from 'react';
-
+import {ArrayFieldTemplateProps, IdSchema, utils} from '@rjsf/core';
 import {
-  isMultiSelect,
-  getDefaultRegistry,
-} from 'react-jsonschema-form/lib/utils';
-
-import {ArrayFieldTemplateProps, IdSchema} from 'react-jsonschema-form';
-import {
-  Button,
+  Image,
   LayoutAnimation,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Image,
 } from 'react-native';
 import DescriptionField from './DescriptionField';
 import {FormContext} from './FormContext';
 import TitleField from './TitleField';
+
+const {isMultiSelect, getDefaultRegistry} = utils;
 
 const ArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
   const {schema, registry = getDefaultRegistry()} = props;
@@ -115,7 +110,7 @@ const AddButton = (props: {
   return (
     <TouchableOpacity
       style={styles.addButton}
-      onPress={e => {
+      onPress={(e) => {
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
         props.onPress(e);
       }}
@@ -181,7 +176,7 @@ const DefaultNormalArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
       )}
 
       <View style={styles.content}>
-        {props.items && props.items.map(p => DefaultArrayItem(p))}
+        {props.items && props.items.map((p) => DefaultArrayItem(p))}
       </View>
 
       {props.canAdd && (
