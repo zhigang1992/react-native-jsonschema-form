@@ -9,7 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "outDir": "lib",
+    "outDir": "./lib",
     "declaration": true
   },
   "exclude": ["node_modules"]
