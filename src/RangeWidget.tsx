@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {WidgetProps, utils} from '@rjsf/core';
+import { StyleSheet, Text, View } from 'react-native';
+import { utils, WidgetProps } from '@rjsf/core';
 import Slider from '@react-native-community/slider';
 
-const {rangeSpec} = utils;
+const { rangeSpec } = utils;
 
 const RangeWidget = ({
   value,
@@ -12,7 +12,7 @@ const RangeWidget = ({
   schema,
   onChange,
 }: WidgetProps) => {
-  const {min = 0, step = 1, max = 100} = rangeSpec(schema);
+  const { min = 0, step = 1, max = 100 } = rangeSpec(schema);
 
   return (
     <View style={styles.container}>

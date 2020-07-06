@@ -1,6 +1,6 @@
-import {ComponentClass, FunctionComponent} from 'react';
-import {FormProps, withTheme} from '@rjsf/core';
-import {Theme} from './Theme';
+import { ComponentClass, FunctionComponent } from 'react';
+import { FormProps, withTheme } from '@rjsf/core';
+import { Theme } from './Theme';
 
 export const RNForm:
   | ComponentClass<FormProps<any>>

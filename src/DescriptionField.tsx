@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
-const DescriptionField = ({description}: {description?: string}) => {
+const DescriptionField = ({ description }: { description?: string }) => {
   if (description) {
     return <Text style={styles.description}>{description}</Text>;
   }

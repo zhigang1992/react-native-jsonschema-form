@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {ObjectFieldTemplateProps} from '@rjsf/core';
+import { StyleSheet, View } from 'react-native';
+import { ObjectFieldTemplateProps } from '@rjsf/core';
 import DescriptionField from './DescriptionField';
 import TitleField from './TitleField';
 

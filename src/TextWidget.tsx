@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {StyleSheet, TextInput} from 'react-native';
-import {WidgetProps} from '@rjsf/core';
+import React, { useState } from 'react';
+import { StyleSheet, TextInput } from 'react-native';
+import { WidgetProps } from '@rjsf/core';
 
 const TextWidget = ({
   id,
@@ -16,8 +16,8 @@ const TextWidget = ({
   multiline,
   secureEntry,
   schema,
-}: WidgetProps & {multiline?: boolean; secureEntry?: boolean}) => {
-  const [focused, setFocused] = useState(false);
+}: WidgetProps & { multiline?: boolean; secureEntry?: boolean }) => {
+  const [ focused, setFocused ] = useState(false);
   return (
     <TextInput
       multiline={multiline}
@@ -27,7 +27,7 @@ const TextWidget = ({
       keyboardType={schema.type === 'number' ? 'numeric' : 'default'}
       value={value ? value.toString() : ''}
       secureTextEntry={secureEntry}
-      onChangeText={(newText) =>
+      onChangeText={newText =>
         onChange(newText === '' ? options.emptyValue : newText)
       }
       onBlur={() => {

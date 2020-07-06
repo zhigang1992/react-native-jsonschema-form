@@ -1,21 +1,21 @@
-import React, {useContext} from 'react';
-import {StyleSheet, Text} from 'react-native';
-import {FormContext} from './FormContext';
+import React, { useContext } from 'react';
+import { StyleSheet, Text } from 'react-native';
+import { FormContext } from './FormContext';
 
 const TitleField = ({
-  title,
-  required,
-}: {
+                      title,
+                      required,
+                    }: {
   title?: string;
   required?: boolean;
 }) => {
   const context = useContext(FormContext);
   return (
-    <Text style={styles.title}>
-      {title}
-      {required && (
-        <Text style={styles.required}> {context.requiredTitle}</Text>
-      )}
+    <Text style={ styles.title }>
+      { title }
+      { required && (
+        <Text style={ styles.required }> { context.requiredTitle }</Text>
+      ) }
     </Text>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import {FieldTemplateProps} from '@rjsf/core';
-import {StyleSheet, Text, View} from 'react-native';
+import { FieldTemplateProps } from '@rjsf/core';
+import { StyleSheet, Text, View } from 'react-native';
 import TitleField from './TitleField';
 import DescriptionField from './DescriptionField';
 
@@ -18,7 +18,8 @@ const FieldTemplate = ({
       style={[
         displayLabel && styles.container,
         rawErrors.length > 0 && styles.formError,
-      ]}>
+      ]}
+    >
       {displayLabel && label ? (
         <TitleField title={label} required={required} />
       ) : null}
@@ -29,7 +30,7 @@ const FieldTemplate = ({
       {rawErrors.length > 0 && (
         <>
           {rawErrors.map((error, i: number) => (
-            <Text style={[styles.description, styles.error]} key={i}>
+            <Text style={[ styles.description, styles.error ]} key={i}>
               - {error}
             </Text>
           ))}

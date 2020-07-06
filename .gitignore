@@ -41,4 +41,4 @@ buck-out/
 \.buckd/
 *.keystore
 
-lib/
+dist/

@@ -1,19 +1,28 @@
 {
   "name": "rjsf-native",
   "version": "1.0.13",
-  "main": "lib/index.js",
-  "types": "types.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/rjsf-native.esm.js",
+  "typings": "dist/index.d.ts",
+  "description": "React Native theme, fields and widgets for react-jsonschema-form",
   "license": "MIT",
   "files": [
-    "types.d.ts",
-    "../lib/*",
-    "../assets/*"
+    "dist",
+    "assets"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc",
+    "start": "tsdx watch",
+    "build": "rimraf dist && tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
     "prepublish": "yarn build"
   },
-  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
   "peerDependencies": {
     "@react-native-community/slider": "*",
     "@rjsf/core": "^2.0.0",
@@ -21,11 +30,26 @@
     "react-native": ">=60.0.0"
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^2.0.0",
     "@react-native-community/slider": "^3.0.0",
     "@rjsf/core": "^2.2.0",
     "@types/react": "^16.9.41",
     "@types/react-native": "^0.62.16",
+    "husky": "^4.2.5",
     "rimraf": "^3.0.2",
-    "typescript": "^3.8.3"
-  }
+    "tsdx": "^0.13.2",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.6"
+  },
+  "keywords": [
+    "react-native",
+    "react-jsonschema-form",
+    "jsonschema",
+    "json-schema",
+    "json",
+    "schema",
+    "form",
+    "react",
+    "rjsf-native"
+  ]
 }

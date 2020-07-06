@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {WidgetProps} from '@rjsf/core';
-import {BooleanToggleRow} from './CheckboxWidget';
-import {FormContext} from './FormContext';
+import React, { useContext } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { WidgetProps } from '@rjsf/core';
+import { BooleanToggleRow } from './CheckboxWidget';
+import { FormContext } from './FormContext';
 
 const RadioWidget = ({
   options,
@@ -11,7 +11,7 @@ const RadioWidget = ({
   readonly,
   onChange,
 }: WidgetProps) => {
-  const {enumOptions, enumDisabled} = options;
+  const { enumOptions, enumDisabled } = options;
 
   const _onChange = (newValue: any) => onChange(newValue);
 

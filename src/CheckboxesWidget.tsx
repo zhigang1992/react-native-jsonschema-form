@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {WidgetProps} from '@rjsf/core';
-import {CheckBoxComponent} from './CheckboxWidget';
-import {StyleSheet, View} from 'react-native';
+import { WidgetProps } from '@rjsf/core';
+import { CheckBoxComponent } from './CheckboxWidget';
+import { StyleSheet, View } from 'react-native';
 
 const selectValue = (value: any, selected: any, all: any) => {
   const at = all.indexOf(value);
@@ -18,18 +18,16 @@ const deselectValue = (value: any, selected: any) => {
 };
 
 const CheckboxesWidget = ({
-  schema,
-  label,
   disabled,
   options,
   value,
   readonly,
   onChange,
 }: WidgetProps) => {
-  const {enumOptions, enumDisabled} = options;
+  const { enumOptions, enumDisabled } = options;
 
   const _onChange = (option: any) => (checked: boolean) => {
-    const all = (enumOptions as any).map(({value: v}: any) => v);
+    const all = (enumOptions as any).map(({ value: v }: any) => v);
 
     if (checked) {
       onChange(selectValue(option.value, value, all));

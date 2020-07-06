@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {WidgetProps} from '@rjsf/core';
+import { WidgetProps } from '@rjsf/core';
 import {
   Image,
   ImageSourcePropType,
@@ -12,7 +12,15 @@ import DescriptionField from './DescriptionField';
 import TitleField from './TitleField';
 
 const CheckboxWidget = (props: WidgetProps) => {
-  const {value, disabled, readonly, required, label, onChange, schema} = props;
+  const {
+    value,
+    disabled,
+    readonly,
+    required,
+    label,
+    onChange,
+    schema,
+  } = props;
 
   return (
     <>
@@ -61,7 +69,8 @@ export const BooleanToggleRow = ({
   <TouchableOpacity
     style={styles.container}
     disabled={disabled}
-    onPress={() => onChange(!selected)}>
+    onPress={() => onChange(!selected)}
+  >
     <Image source={selected ? on : off} style={styles.checkbox} />
     <Text style={styles.text}>{label}</Text>
   </TouchableOpacity>

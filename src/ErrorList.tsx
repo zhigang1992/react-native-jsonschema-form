@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {ErrorListProps} from '@rjsf/core';
-import {StyleSheet, Text, View} from 'react-native';
+import { ErrorListProps } from '@rjsf/core';
+import { StyleSheet, Text, View } from 'react-native';
 
-const ErrorList = ({errors}: ErrorListProps) => (
+const ErrorList = ({ errors }: ErrorListProps) => (
   <View style={styles.container}>
     <Text style={styles.title}>Errors</Text>
     {errors.map((error, i: number) => {

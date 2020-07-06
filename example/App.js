@@ -1,9 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, ScrollView, StyleSheet, View } from 'react-native';
-import ReactNativeForm, {
-  defaultProps,
-  FormContext,
-} from 'rjsf-native/src/index';
+import ReactNativeForm, { defaultProps, FormContext } from 'rjsf-native';
 
 const schema = {
   type: 'object',
@@ -20,12 +17,12 @@ const schema = {
     numberEnum: {
       type: 'number',
       title: 'Number enum',
-      enum: [1, 2, 3],
+      enum: [ 1, 2, 3 ],
     },
     numberEnumRadio: {
       type: 'number',
       title: 'Number enum',
-      enum: [1, 2, 3],
+      enum: [ 1, 2, 3 ],
     },
     integerRange: {
       title: 'Integer range',
@@ -63,28 +60,28 @@ export default () => {
   const ref = useRef();
   return (
     <FormContext.Provider
-      value={{
+      value={ {
         ...defaultProps,
-      }}>
-      <ScrollView style={styles.container}>
+      } }>
+      <ScrollView style={ styles.container }>
         <ReactNativeForm
-          ref={form}
-          onError={(e) => {
+          ref={ form }
+          onError={ (e) => {
             console.log(e);
-          }}
-          schema={schema}
-          uiSchema={uiSchema}
-          onSubmit={(f) => console.log(f.formData)}>
+          } }
+          schema={ schema }
+          uiSchema={ uiSchema }
+          onSubmit={ (f) => console.log(f.formData) }>
           <Button
             title="Submit"
-            onPress={() => {
+            onPress={ () => {
               if (form.current) {
                 form.current.submit();
               }
-            }}
+            } }
           />
         </ReactNativeForm>
-        <View style={styles.spacer} />
+        <View style={ styles.spacer }/>
       </ScrollView>
     </FormContext.Provider>
   );
