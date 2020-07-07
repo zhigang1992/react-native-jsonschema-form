@@ -10,7 +10,7 @@ const DescriptionField = ({ description }: { description?: string }) => {
 
 const styles = StyleSheet.create({
   description: {
-    marginTop: 5,
+    marginBottom: 10,
     fontSize: 14,
     color: '#999999',
   },

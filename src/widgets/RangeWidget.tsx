@@ -33,7 +33,7 @@ const RangeWidget = ({
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    marginTop: 10,
     alignItems: 'center',
     flexDirection: 'row',
   },

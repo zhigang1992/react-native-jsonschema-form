@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 
 interface FormContextProps {
   theme: {
@@ -11,10 +11,11 @@ interface FormContextProps {
 
 export const defaultProps: FormContextProps = {
   theme: {
-    primaryColor: 'blue',
+    primaryColor: '#2196F3',
   },
-  requiredTitle: '*Required',
+  requiredTitle: '*',
   arrayAddTitle: 'Add',
 };
 
 export const FormContext = createContext<FormContextProps>(defaultProps);
+export const useFormContext = () => useContext(FormContext);

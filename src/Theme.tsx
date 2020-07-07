@@ -1,11 +1,11 @@
 import { ThemeProps } from '@rjsf/core';
-import FieldTemplate from './FieldTemplate';
-import ObjectFieldTemplate from './ObjectFieldTemplate';
-import ArrayFieldTemplate from './ArrayFieldTemplate';
+import FieldTemplate from './fields/FieldTemplate';
+import ObjectFieldTemplate from './fields/ObjectFieldTemplate';
+import ArrayFieldTemplate from './fields/ArrayFieldTemplate';
 import ErrorList from './ErrorList';
 import { MockHTMLForm } from './MockHTMLForm';
-import { Widgets } from './Widgets';
-import { Fields } from './Fields';
+import { Widgets } from './widgets/Widgets';
+import { Fields } from './fields/Fields';
 
 const Theme: ThemeProps = {
   widgets: Widgets,

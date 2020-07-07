@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
 class Event {
-  preventDefault() {}
+  preventDefault() {
+  }
 }
 
 // @ts-ignore
@@ -10,7 +11,7 @@ global.Event = global.Event || Event;
 
 export class MockHTMLForm extends Component {
   render() {
-    return <View style={styles.container}>{this.props.children}</View>;
+    return <View>{ this.props.children }</View>;
   }
 
   dispatchEvent(e: Event) {
@@ -20,10 +21,3 @@ export class MockHTMLForm extends Component {
     this.props.onSubmit(e);
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingLeft: 10,
-    paddingRight: 15,
-  },
-});

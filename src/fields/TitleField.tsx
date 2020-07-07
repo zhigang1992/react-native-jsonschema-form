@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { FormContext } from './FormContext';
+import { FormContext } from '../FormContext';
 
 const TitleField = ({
                       title,
@@ -14,7 +14,7 @@ const TitleField = ({
     <Text style={ styles.title }>
       { title }
       { required && (
-        <Text style={ styles.required }> { context.requiredTitle }</Text>
+        <Text style={ styles.required }>{ context.requiredTitle }</Text>
       ) }
     </Text>
   );
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     color: 'black',
-    lineHeight: 22,
+    marginBottom: 5,
   },
   required: {
     color: '#F51A51',

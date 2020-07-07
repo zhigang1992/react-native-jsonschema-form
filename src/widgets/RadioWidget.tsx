@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { WidgetProps } from '@rjsf/core';
 import { BooleanToggleRow } from './CheckboxWidget';
-import { FormContext } from './FormContext';
+import { FormContext } from '../FormContext';
 
 const RadioWidget = ({
-  options,
-  value,
-  disabled,
-  readonly,
-  onChange,
-}: WidgetProps) => {
+                       options,
+                       value,
+                       disabled,
+                       readonly,
+                       onChange,
+                     }: WidgetProps) => {
   const { enumOptions, enumDisabled } = options;
 
   const _onChange = (newValue: any) => onChange(newValue);
@@ -18,34 +18,28 @@ const RadioWidget = ({
   const context = useContext(FormContext);
 
   return (
-    <View style={styles.container}>
-      {(enumOptions as any).map((option: any, i: number) => {
+    <View>
+      { (enumOptions as any).map((option: any, i: number) => {
         const itemDisabled =
           enumDisabled && (enumDisabled as any).indexOf(option.value) !== -1;
 
         return (
           <RadioComponent
-            key={i}
-            onChange={() => _onChange(option.value)}
-            selected={option.value === value}
+            key={ i }
+            onChange={ () => _onChange(option.value) }
+            selected={ option.value === value }
             label={
               context.radioLabelMapping
                 ? context.radioLabelMapping(option.label)
                 : option.label
             }
-            disabled={disabled || itemDisabled || readonly}
+            disabled={ disabled || itemDisabled || readonly }
           />
         );
-      })}
+      }) }
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 20,
-  },
-});
 
 const RadioComponent = (props: {
   disabled?: boolean;
@@ -54,9 +48,9 @@ const RadioComponent = (props: {
   label: string;
 }) => (
   <BooleanToggleRow
-    {...props}
-    on={require('../assets/radioOn.png')}
-    off={require('../assets/radioOff.png')}
+    { ...props }
+    on={ require('../../assets/radioOn.png') }
+    off={ require('../../assets/radioOff.png') }
   />
 );
 
