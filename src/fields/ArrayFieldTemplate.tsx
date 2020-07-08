@@ -4,6 +4,9 @@ import { Image, LayoutAnimation, StyleSheet, Text, TouchableOpacity, View } from
 import DescriptionField from './DescriptionField';
 import { useFormContext } from '../FormContext';
 import TitleField from './TitleField';
+import reorderUp from '../../assets/ReorderUp@3x.png';
+import reorderDown from '../../assets/ReorderDown@3x.png';
+import arrayDelete from '../../assets/arrayDelete@3x.png';
 
 const { isMultiSelect, getDefaultRegistry } = utils;
 
@@ -28,7 +31,6 @@ const ArrayFieldTitle = ({ title, required }: ArrayFieldTitleProps) => {
   if (!title) {
     return null;
   }
-
   return <TitleField title={ title } required={ required }/>;
 };
 
@@ -63,7 +65,7 @@ const DefaultArrayItem = (props: any) => {
                 props.onReorderClick(props.index, props.index - 1)();
               } }
             >
-              <Image source={ require('../../assets/ReorderUp.png') }/>
+              <Image style={ styles.image } source={ { uri: reorderUp } }/>
             </TouchableOpacity>
           )
         }
@@ -75,7 +77,7 @@ const DefaultArrayItem = (props: any) => {
                 props.onReorderClick(props.index, props.index + 1)();
               } }
             >
-              <Image source={ require('../../assets/ReorderDown.png') }/>
+              <Image style={ styles.image } source={ { uri: reorderDown } }/>
             </TouchableOpacity>
           )
         }
@@ -91,7 +93,7 @@ const DefaultArrayItem = (props: any) => {
                 props.onDropIndexClick(props.index)();
               } }
             >
-              <Image source={ require('../../assets/arrayDelete.png') }/>
+              <Image style={ styles.image } source={ { uri: arrayDelete } }/>
             </TouchableOpacity>
           )
         }
@@ -108,7 +110,7 @@ const AddButton = (props: {
   return (
     <TouchableOpacity
       style={ [ styles.addButton, {
-        backgroundColor: context.theme.primaryColor
+        backgroundColor: context.theme.primaryColor,
       } ] }
       onPress={ e => {
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -231,6 +233,11 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: '600',
     fontFamily: '',
+  },
+  image: {
+    width: 24,
+    height: 24,
+    resizeMode: 'contain',
   },
 });
 
