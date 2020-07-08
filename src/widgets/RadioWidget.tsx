@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
-import { View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { WidgetProps } from '@rjsf/core';
-import { BooleanToggleRow } from './CheckboxWidget';
-import { FormContext } from '../FormContext';
+import { useFormContext } from '../FormContext';
 
 const RadioWidget = ({
                        options,
@@ -12,46 +11,73 @@ const RadioWidget = ({
                        onChange,
                      }: WidgetProps) => {
   const { enumOptions, enumDisabled } = options;
+  const { theme, radioLabelMapping } = useFormContext();
 
-  const _onChange = (newValue: any) => onChange(newValue);
-
-  const context = useContext(FormContext);
+  const onPress = (newValue: any) => () => onChange(newValue);
 
   return (
     <View>
-      { (enumOptions as any).map((option: any, i: number) => {
-        const itemDisabled =
-          enumDisabled && (enumDisabled as any).indexOf(option.value) !== -1;
+      {
+        (enumOptions as any).map((option: any, i: number) => {
+          const itemDisabled =
+            enumDisabled && (enumDisabled as any).indexOf(option.value) !== -1;
+          const selected = option.value === value;
+          const label = radioLabelMapping ? radioLabelMapping(option.label) : option.label;
 
-        return (
-          <RadioComponent
-            key={ i }
-            onChange={ () => _onChange(option.value) }
-            selected={ option.value === value }
-            label={
-              context.radioLabelMapping
-                ? context.radioLabelMapping(option.label)
-                : option.label
-            }
-            disabled={ disabled || itemDisabled || readonly }
-          />
-        );
-      }) }
+          return (
+            <TouchableOpacity
+              key={ i }
+              style={ styles.container }
+              disabled={ disabled || itemDisabled || readonly }
+              onPress={ onPress(option.value) }
+            >
+              <View
+                style={ [
+                  styles.radioButton,
+                  { borderColor: selected ? theme.highlightColor : theme.textColor },
+                ] }
+              >
+                {
+                  selected && <View
+                    style={ [ styles.radioButtonFilled, {
+                      backgroundColor: theme.highlightColor,
+                    } ]
+                    }/>
+                }
+              </View>
+              <Text style={ styles.text }>{ label }</Text>
+            </TouchableOpacity>
+          );
+        })
+      }
     </View>
   );
 };
 
-const RadioComponent = (props: {
-  disabled?: boolean;
-  onChange: (selected: boolean) => void;
-  selected: boolean;
-  label: string;
-}) => (
-  <BooleanToggleRow
-    { ...props }
-    on={ require('../../assets/radioOn.png') }
-    off={ require('../../assets/radioOff.png') }
-  />
-);
-
 export default RadioWidget;
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  radioButton: {
+    width: 18,
+    height: 18,
+    borderRadius: 18,
+    borderWidth: 1,
+    marginRight: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  radioButtonFilled: {
+    width: 12,
+    height: 12,
+    borderRadius: 12,
+  },
+  text: {
+    fontSize: 14,
+    color: 'black',
+  },
+});

@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { WidgetProps } from '@rjsf/core';
-import { Image, ImageSourcePropType, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import DescriptionField from '../fields/DescriptionField';
 import TitleField from '../fields/TitleField';
+import { useFormContext } from '../FormContext';
 
 const CheckboxWidget = ({
                           value,
@@ -17,10 +18,12 @@ const CheckboxWidget = ({
 
   return (
     <>
-      { schema.title && <TitleField title={ schema.title } required={ required }/> }
-      { schema.description && (
-        <DescriptionField description={ schema.description }/>
-      ) }
+      {
+        schema.title && <TitleField title={ schema.title } required={ required }/>
+      }
+      {
+        schema.description && <DescriptionField description={ schema.description }/>
+      }
       <CheckBoxComponent
         label={ schema.title || label }
         selected={ value }
@@ -39,41 +42,27 @@ type CheckBoxProps = {
   label: string;
 }
 
-export const CheckBoxComponent = (props: CheckBoxProps) => (
-  <BooleanToggleRow
-    { ...props }
-    on={ require('../../assets/checkboxOn.png') }
-    off={ require('../../assets/checkboxOff.png') }
-  />
-);
+export const CheckBoxComponent = ({ disabled, onChange, selected, label }: CheckBoxProps) => {
+  const { theme } = useFormContext();
 
+  const themedStyle = {
+    borderColor: selected ? theme.highlightColor : theme.textColor,
+    backgroundColor: selected ? theme.highlightColor : 'transparent',
+  };
 
-type BooleanToggleProps = {
-  disabled?: boolean;
-  onChange: (selected: boolean) => void;
-  selected: boolean;
-  label: string;
-  on: ImageSourcePropType;
-  off: ImageSourcePropType;
-}
-
-export const BooleanToggleRow = ({
-                                   disabled,
-                                   onChange,
-                                   selected,
-                                   label,
-                                   on,
-                                   off,
-                                 }: BooleanToggleProps) => (
-  <TouchableOpacity
-    style={ styles.container }
-    disabled={ disabled }
-    onPress={ () => onChange(!selected) }
-  >
-    <Image source={ selected ? on : off } style={ styles.checkbox }/>
-    <Text style={ styles.text }>{ label }</Text>
-  </TouchableOpacity>
-);
+  return (
+    <TouchableOpacity
+      style={ styles.container }
+      disabled={ disabled }
+      onPress={ () => onChange(!selected) }
+    >
+      <View style={ [ styles.checkbox, themedStyle ] }>
+        { selected && <Text style={ styles.check }>{'\u2713'}</Text> }
+      </View>
+      <Text style={ styles.text }>{ label }</Text>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -85,6 +74,12 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
     marginRight: 10,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  check: {
+    color: 'white',
   },
   text: {
     fontSize: 14,

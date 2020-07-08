@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, ScrollView, StyleSheet, View } from 'react-native';
-import ReactNativeForm, { defaultProps, FormContext } from 'rjsf-native/src/index';
+import ReactNativeForm, { defaultProps, FormContext } from 'rjsf-native';
 import schema from './schema.json';
 
 const uiSchema = {
