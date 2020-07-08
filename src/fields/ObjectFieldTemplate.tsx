@@ -14,10 +14,10 @@ const ObjectFieldTemplate = ({
   return (
     <View>
       {
-        (uiSchema[ 'ui:title' ] || title) && <RootTitleField title={ title } required={ required }/>
+        (uiSchema[ 'ui:title' ] || title) ? <RootTitleField title={ title } required={ required }/> : null
       }
       {
-        description && <DescriptionField description={ description }/>
+        description ? <DescriptionField description={ description }/> : null
       }
       {
         properties.map((element: any, index: number) => (

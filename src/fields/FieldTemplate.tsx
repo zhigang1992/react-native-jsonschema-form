@@ -21,10 +21,10 @@ const FieldTemplate = ({
       ] }
     >
       {
-        displayLabel && label && <TitleField title={ label } required={ required }/>
+        (displayLabel && label) ? <TitleField title={ label } required={ required }/> : null
       }
       {
-        displayLabel && rawDescription && <DescriptionField description={ rawDescription }/>
+        (displayLabel && rawDescription) ? <DescriptionField description={ rawDescription }/> : null
       }
       { children }
       { rawErrors.length > 0 && (
@@ -36,7 +36,7 @@ const FieldTemplate = ({
           )) }
         </>
       ) }
-      { rawHelp && <Text style={ styles.description }>{ rawHelp }</Text> }
+      { rawHelp?.length > 0 && <Text style={ styles.description }>{ rawHelp }</Text> }
     </View>
   );
 };

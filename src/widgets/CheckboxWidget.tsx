@@ -19,10 +19,10 @@ const CheckboxWidget = ({
   return (
     <>
       {
-        schema.title && <TitleField title={ schema.title } required={ required }/>
+        schema.title ? <TitleField title={ schema.title } required={ required }/> : null
       }
       {
-        schema.description && <DescriptionField description={ schema.description }/>
+        schema.description ? <DescriptionField description={ schema.description }/> : null
       }
       <CheckBoxComponent
         label={ schema.title || label }
