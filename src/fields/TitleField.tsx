@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { FormContext } from '../FormContext';
+import { useFormContext } from '../FormContext';
 
 const TitleField = ({
                       title,
@@ -9,13 +9,17 @@ const TitleField = ({
   title?: string;
   required?: boolean;
 }) => {
-  const context = useContext(FormContext);
+  const { requiredTitle, theme } = useFormContext();
   return (
-    <Text style={ styles.title }>
+    <Text style={ [
+        styles.title,
+        { color: theme.textColor },
+      ] }
+    >
       { title }
-      { required && (
-        <Text style={ styles.required }>{ context.requiredTitle }</Text>
-      ) }
+      {
+        required && <Text style={ { color: theme.requiredColor } }>{ requiredTitle }</Text>
+      }
     </Text>
   );
 };
@@ -24,11 +28,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: '600',
-    color: 'black',
+    color: '#333333',
     marginBottom: 5,
-  },
-  required: {
-    color: '#F51A51',
+    fontFamily: 'Roboto',
   },
 });
 

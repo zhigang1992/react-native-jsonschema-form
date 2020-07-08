@@ -10,13 +10,19 @@ const RootTitleField = ({
   title?: string;
   required?: boolean;
 }) => {
-  const context = useFormContext();
+  const { theme, requiredTitle } = useFormContext();
   return (
-    <Text style={ styles.title }>
+    <Text style={ [
+      styles.title,
+      {
+        color: theme.textColor,
+      },
+    ] }
+    >
       { title }
-      { required && (
-        <Text style={ styles.required }>{ context.requiredTitle }</Text>
-      ) }
+      {
+        required && <Text style={ { color: theme.requiredColor } }>{ requiredTitle }</Text>
+      }
     </Text>
   );
 };
@@ -26,12 +32,9 @@ const styles = StyleSheet.create({
     fontSize: 21,
     fontWeight: '600',
     color: 'black',
-    marginBottom: 20,
+    marginBottom: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#EEEEEE',
-  },
-  required: {
-    color: '#F51A51',
   },
 });
 

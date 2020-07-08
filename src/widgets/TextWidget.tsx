@@ -1,48 +1,58 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 import { WidgetProps } from '@rjsf/core';
+import { useFormContext } from '../FormContext';
 
 const TextWidget = ({
-  id,
-  readonly,
-  disabled,
-  label,
-  value,
-  onChange,
-  onBlur,
-  onFocus,
-  autofocus,
-  options,
-  multiline,
-  secureEntry,
-  schema,
-}: WidgetProps & { multiline?: boolean; secureEntry?: boolean }) => {
+                      id,
+                      readonly,
+                      disabled,
+                      label,
+                      value,
+                      onChange,
+                      onBlur,
+                      onFocus,
+                      autofocus,
+                      options,
+                      multiline,
+                      secureEntry,
+                      schema,
+                    }: WidgetProps & { multiline?: boolean; secureEntry?: boolean }) => {
+  const { theme } = useFormContext();
   const [ focused, setFocused ] = useState(false);
+
+  const themedStyle = {
+    borderColor: focused ? theme.highlightColor : theme.borderColor,
+    borderWidth: focused ? 2 : 1,
+    color: theme.textColor,
+  };
+
   return (
     <TextInput
-      multiline={multiline}
-      placeholder={label}
-      autoFocus={autofocus}
-      editable={!disabled && !readonly}
-      keyboardType={schema.type === 'number' ? 'numeric' : 'default'}
-      value={value ? value.toString() : ''}
-      secureTextEntry={secureEntry}
-      onChangeText={newText =>
+      multiline={ multiline }
+      placeholder={ label }
+      autoFocus={ autofocus }
+      editable={ !disabled && !readonly }
+      keyboardType={ schema.type === 'number' ? 'numeric' : 'default' }
+      value={ value ? value.toString() : '' }
+      secureTextEntry={ secureEntry }
+      onChangeText={ newText =>
         onChange(newText === '' ? options.emptyValue : newText)
       }
-      onBlur={() => {
+      onBlur={ () => {
         setFocused(false);
         onBlur(id, value);
-      }}
-      onFocus={() => {
+      } }
+      onFocus={ () => {
         setFocused(true);
         onFocus(id, value);
-      }}
-      style={[
+      } }
+      selectionColor={ theme.highlightColor }
+      style={ [
         styles.input,
+        themedStyle,
         multiline && styles.multiline,
-        focused && styles.focused,
-      ]}
+      ] }
     />
   );
 };
@@ -56,14 +66,11 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     borderRadius: 4,
     fontSize: 16,
-    color: 'black',
+    color: '#333333',
   },
   multiline: {
     minHeight: 100,
     lineHeight: 22,
-  },
-  focused: {
-    borderColor: '#2c3e50',
   },
 });
 
