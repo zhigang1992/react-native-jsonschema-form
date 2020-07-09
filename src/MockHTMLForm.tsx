@@ -8,6 +8,8 @@ class Event {
 
 // @ts-ignore
 global.Event = global.Event || Event;
+// @ts-ignore
+global.CustomEvent = global.CustomEvent || Event;
 
 export class MockHTMLForm extends Component {
   render() {
