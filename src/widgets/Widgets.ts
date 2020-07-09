@@ -5,14 +5,18 @@ import CheckboxesWidget from './CheckboxesWidget';
 import PasswordWidget from './PasswordWidget';
 import RadioWidget from './RadioWidget';
 import RangeWidget from './RangeWidget';
+import EmailWidget from './EmailWidget';
+import URLWidget from './URLWidget';
 
 export const Widgets = {
-    TextWidget,
-    TextareaWidget,
-    CheckboxWidget,
-    CheckboxesWidget,
-    PasswordWidget,
-    RadioWidget,
-    SelectWidget: RadioWidget,
-    RangeWidget,
+  TextWidget,
+  EmailWidget,
+  URLWidget,
+  TextareaWidget,
+  CheckboxWidget,
+  CheckboxesWidget,
+  PasswordWidget,
+  RadioWidget,
+  SelectWidget: RadioWidget,
+  RangeWidget,
 };

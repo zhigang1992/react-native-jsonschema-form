@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput } from 'react-native';
+import { StyleSheet, TextInput, TextInputIOSProps } from 'react-native';
 import { WidgetProps } from '@rjsf/core';
 import { useFormContext } from '../FormContext';
+
+type TextWidgetProps = WidgetProps & {
+  multiline?: boolean;
+  secureEntry?: boolean;
+  textContentType?: TextInputIOSProps['textContentType']
+}
 
 const TextWidget = ({
                       id,
@@ -17,7 +23,8 @@ const TextWidget = ({
                       multiline,
                       secureEntry,
                       schema,
-                    }: WidgetProps & { multiline?: boolean; secureEntry?: boolean }) => {
+                      textContentType = 'none',
+                    }: TextWidgetProps) => {
   const { theme } = useFormContext();
   const [ focused, setFocused ] = useState(false);
 
@@ -36,6 +43,7 @@ const TextWidget = ({
       keyboardType={ schema.type === 'number' ? 'numeric' : 'default' }
       value={ value ? value.toString() : '' }
       secureTextEntry={ secureEntry }
+      textContentType={ textContentType }
       onChangeText={ newText =>
         onChange(newText === '' ? options.emptyValue : newText)
       }

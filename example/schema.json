@@ -14,13 +14,22 @@
         },
         "title": {
           "type": "string",
-          "description": "Title description"
+          "description": "Title description",
         },
         "description": {
           "type": "string"
         },
         "password": {
           "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "email"
+        },
+        "url": {
+          "type": "string",
+          "format": "url"
         },
         "percentage": {
           "type": "number"
