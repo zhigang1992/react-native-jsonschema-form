@@ -7,7 +7,6 @@ yarn add @rjsf/core rjsf-native
 
 # This package also depends on `@react-native-community/slider`
 yarn add @react-native-community/slider
-# and link and pod install since it's a native library
 ```
 
 ## Usage
@@ -52,5 +51,11 @@ const App = () => {
 }
 ```
 
-![](./docs/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-01-03%20at%2011.45.00.png)
-![](./docs/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-01-03%20at%2011.45.04.png)
+## Development
+1. Run ```npm start``` in root folder to run the dev server
+2. ```cd example && npm run android``` to start the example app
+
+![](./docs/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-01-03%20at%2011.45.00.png) | ![](./docs/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-01-03%20at%2011.45.04.png)
+:-------------------------:|:-------------------------:
+
+
