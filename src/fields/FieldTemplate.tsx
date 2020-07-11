@@ -3,6 +3,7 @@ import { FieldTemplateProps } from '@rjsf/core';
 import { StyleSheet, Text, View } from 'react-native';
 import TitleField from './TitleField';
 import DescriptionField from './DescriptionField';
+import { useFormContext } from '../FormContext';
 
 const FieldTemplate = ({
                          label,
@@ -13,29 +14,35 @@ const FieldTemplate = ({
                          required,
                          rawDescription,
                        }: FieldTemplateProps) => {
+  const { theme } = useFormContext();
+  const hasErrors = rawErrors?.length > 0;
+
   return (
     <View
-      style={ [
-        styles.container,
-        rawErrors.length > 0 && styles.formError,
-      ] }
+      style={ styles.container }
     >
       {
-        (displayLabel && label) ? <TitleField title={ label } required={ required }/> : null
+        (displayLabel && label) ? <TitleField title={ label } required={ required } error={ hasErrors }/> : null
       }
       {
         (displayLabel && rawDescription) ? <DescriptionField description={ rawDescription }/> : null
       }
       { children }
-      { rawErrors.length > 0 && (
-        <>
-          { rawErrors.map((error, i: number) => (
-            <Text style={ [ styles.description, styles.error ] } key={ i }>
-              - { error }
-            </Text>
-          )) }
-        </>
-      ) }
+
+      {
+        hasErrors && rawErrors.map((error, i: number) => (
+          <Text
+            key={ i }
+            style={ [
+              styles.description,
+              styles.error,
+              { color: theme.errorColor },
+            ] }
+          >
+            { '\u2022' } { error }
+          </Text>
+        ))
+      }
       { rawHelp?.length > 0 && <Text style={ styles.description }>{ rawHelp }</Text> }
     </View>
   );
@@ -45,12 +52,8 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 20,
   },
-  formError: {
-    backgroundColor: '#fadee2',
-  },
   error: {
     marginTop: 5,
-    color: 'red',
   },
   description: {
     fontSize: 14,

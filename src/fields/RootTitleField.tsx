@@ -21,7 +21,7 @@ const RootTitleField = ({
     >
       { title }
       {
-        required && <Text style={ { color: theme.requiredColor } }>{ requiredTitle }</Text>
+        required && <Text style={ { color: theme.errorColor } }>{ requiredTitle }</Text>
       }
     </Text>
   );

@@ -9,9 +9,11 @@ const RadioWidget = ({
                        disabled,
                        readonly,
                        onChange,
+                       rawErrors,
                      }: WidgetProps) => {
   const { enumOptions, enumDisabled } = options;
   const { theme, radioLabelMapping } = useFormContext();
+  const hasErrors = rawErrors?.length > 0;
 
   const onPress = (newValue: any) => () => onChange(newValue);
 
@@ -23,6 +25,7 @@ const RadioWidget = ({
             enumDisabled && (enumDisabled as any).indexOf(option.value) !== -1;
           const selected = option.value === value;
           const label = radioLabelMapping ? radioLabelMapping(option.label) : option.label;
+          const color = hasErrors ? theme.errorColor : selected ? theme.highlightColor : theme.textColor;
 
           return (
             <TouchableOpacity
@@ -34,18 +37,21 @@ const RadioWidget = ({
               <View
                 style={ [
                   styles.radioButton,
-                  { borderColor: selected ? theme.highlightColor : theme.textColor },
+                  { borderColor: color },
                 ] }
               >
                 {
                   selected && <View
-                    style={ [ styles.radioButtonFilled, {
-                      backgroundColor: theme.highlightColor,
-                    } ]
-                    }/>
+                    style={ [
+                      styles.radioButtonFilled,
+                      { backgroundColor: theme.highlightColor },
+                    ] }
+                  />
                 }
               </View>
-              <Text style={ styles.text }>{ label }</Text>
+              <Text style={ [ styles.text, { color } ] }>
+                { label }
+              </Text>
             </TouchableOpacity>
           );
         })
@@ -78,6 +84,5 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    color: 'black',
   },
 });

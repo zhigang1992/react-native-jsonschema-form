@@ -8,7 +8,6 @@ interface FormContextProps {
     textColor: string;
     placeholderTextColor: string;
     dividerColor: string;
-    requiredColor: string;
     errorColor: string;
     [propName: string]: any;
   };
