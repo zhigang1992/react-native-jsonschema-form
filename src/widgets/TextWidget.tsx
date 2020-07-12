@@ -57,6 +57,7 @@ const TextWidget = ({
         onFocus(id, value);
       } }
       selectionColor={ theme.highlightColor }
+      placeholderTextColor={ theme.placeholderTextColor }
       style={ [
         styles.input,
         themedStyle,

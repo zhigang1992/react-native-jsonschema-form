@@ -7,7 +7,6 @@ interface FormContextProps {
     borderColor: string; // Color of textinput borders
     textColor: string;
     placeholderTextColor: string;
-    dividerColor: string;
     errorColor: string;
     [propName: string]: any;
   };
@@ -23,10 +22,8 @@ export const defaultProps: FormContextProps = {
     highlightColor: '#2196F3',
     borderColor: '#979B9E',
     textColor: '#333333',
-    placeholderTextColor: '#333333',
-    dividerColor: '#EEEEEE',
+    placeholderTextColor: '#999999',
     errorColor: '#a94442',
-    requiredColor: '#a94442',
   },
   requiredTitle: '*',
   arrayAddTitle: 'Add',

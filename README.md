@@ -36,7 +36,7 @@ const App = () => {
 };
 ```
 
-We also provide a Context as a form of overriding defaults
+We also provide a Context as a form of overriding defaults and theming
 
 ```typescript
 import ReactNativeForm, {defaultProps, FormContext} from 'rjsf-native';
@@ -48,6 +48,25 @@ const App = () => {
         <ReactNativeForm .../>
     </FormContext>
   )
+}
+```
+
+### Form Context Props
+```typescript
+{
+  theme: {
+    primaryColor: string; // Your main theme color. Used for e.g. buttons
+    highlightColor: string; // Used for focused inputs, checked checkboxes, slider...
+    borderColor: string; // Color of textinput borders
+    textColor: string;
+    placeholderTextColor: string;
+    errorColor: string;
+    [propName: string]: any;
+  };
+  requiredTitle: string;
+  arrayAddTitle: string;
+  radioLabelMapping?: (label: string) => string;
+  [propName: string]: any;
 }
 ```
 
