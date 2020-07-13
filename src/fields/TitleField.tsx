@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#333333',
     marginBottom: 5,
-    fontFamily: 'Roboto',
   },
 });
 
