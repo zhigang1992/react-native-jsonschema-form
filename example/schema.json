@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$ref": "#/definitions/Root",
+  "title": "Example schema",
+  "description": "Example schema description",
   "definitions": {
     "Root": {
       "type": "object",
@@ -20,6 +22,15 @@
         "password": {
           "type": "string"
         },
+        "email": {
+          "type": "string",
+          "description": "email",
+          "format": "email"
+        },
+        "url": {
+          "type": "string",
+          "format": "url"
+        },
         "percentage": {
           "type": "number"
         },
@@ -37,48 +48,40 @@
         },
         "array": {
           "type": "array",
+          "title": "Array example",
+          "description": "decsription",
           "items": {
             "type": "string"
           },
           "minItems": 1,
           "maxItems": 4
         },
-        "advanced": {
-          "anyOf": [
-            {
-              "type": "object",
-              "properties": {
-                "a": {
-                  "type": "string",
-                  "enum": ["A-1", "A-2", "A-3"]
-                }
+        "nested": {
+          "type": "array",
+          "title": "Tasks",
+          "items": {
+            "type": "object",
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Title",
+                "description": "A sample title"
               },
-              "required": ["a"],
-              "additionalProperties": false
-            },
-            {
-              "type": "object",
-              "properties": {
-                "b": {
-                  "type": "string",
-                  "enum": ["B-1", "B-2", "B-3"]
-                }
+              "details": {
+                "type": "string",
+                "title": "Task details",
+                "description": "Enter the task details"
               },
-              "required": ["b"],
-              "additionalProperties": false
-            },
-            {
-              "type": "object",
-              "properties": {
-                "c": {
-                  "type": "string",
-                  "enum": ["C-1", "C-2", "C-3"]
-                }
-              },
-              "required": ["c"],
-              "additionalProperties": false
+              "done": {
+                "type": "boolean",
+                "title": "Done?",
+                "default": false
+              }
             }
-          ]
+          }
         }
       },
       "required": [
@@ -89,8 +92,7 @@
         "percentage",
         "select",
         "multiselect",
-        "array",
-        "advanced"
+        "array"
       ],
       "additionalProperties": false
     }
