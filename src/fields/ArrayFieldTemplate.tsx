@@ -232,7 +232,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 17,
     fontWeight: '600',
-    fontFamily: '',
   },
   image: {
     width: 24,
