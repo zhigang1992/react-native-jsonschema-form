@@ -31,6 +31,7 @@ export default () => {
       } }
     >
       <ScrollView style={ styles.container }>
+        <View style={ styles.spacer }/>
         <ReactNativeForm
           ref={ form }
           onError={ (e) => {
