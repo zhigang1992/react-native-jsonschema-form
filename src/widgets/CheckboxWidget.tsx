@@ -3,14 +3,12 @@ import React from 'react';
 import { WidgetProps } from '@rjsf/core';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import DescriptionField from '../fields/DescriptionField';
-import TitleField from '../fields/TitleField';
 import { useFormContext } from '../FormContext';
 
 const CheckboxWidget = ({
                           value,
                           disabled,
                           readonly,
-                          required,
                           label,
                           onChange,
                           schema,
@@ -18,9 +16,6 @@ const CheckboxWidget = ({
 
   return (
     <>
-      {
-        schema.title ? <TitleField title={ schema.title } required={ required }/> : null
-      }
       {
         schema.description ? <DescriptionField description={ schema.description }/> : null
       }
