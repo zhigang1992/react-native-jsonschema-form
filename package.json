@@ -24,7 +24,7 @@
     "@react-native-community/slider": "*",
     "@rjsf/core": "^2.0.0",
     "react": ">=16",
-    "react-native": ">=60.0.0"
+    "react-native": ">=0.60.0"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
