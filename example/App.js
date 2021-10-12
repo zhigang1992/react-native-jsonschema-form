@@ -26,30 +26,29 @@ export default () => {
 
   return (
     <FormContext.Provider
-      value={ {
+      value={{
         ...defaultProps,
-      } }
-    >
-      <ScrollView style={ styles.container }>
-        <View style={ styles.spacer }/>
+      }}>
+      <ScrollView style={styles.container}>
+        <View style={styles.spacer} />
         <ReactNativeForm
-          ref={ form }
-          onError={ (e) => {
+          ref={form}
+          onError={(e) => {
             console.log(e);
-          } }
-          schema={ schema }
-          uiSchema={ uiSchema }
-          onSubmit={ (f) => console.log(f.formData) }>
+          }}
+          schema={schema}
+          uiSchema={uiSchema}
+          onSubmit={(f) => console.log(f.formData)}>
           <Button
             title="Submit"
-            onPress={ () => {
+            onPress={() => {
               if (form.current) {
                 form.current.submit();
               }
-            } }
+            }}
           />
         </ReactNativeForm>
-        <View style={ styles.spacer }/>
+        <View style={styles.spacer} />
       </ScrollView>
     </FormContext.Provider>
   );
@@ -58,7 +57,7 @@ export default () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16
+    padding: 16,
   },
   spacer: {
     height: 100,
