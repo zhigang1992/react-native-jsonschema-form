@@ -28,6 +28,7 @@ module.exports = {
   // metro@0.55 / React Native 0.61
   // (not needed with React Native 0.60 / metro@0.54)
   resolver: {
+    sourceExts: ['jsx', 'js', 'ts', 'tsx'], //add here,
     extraNodeModules: new Proxy(
       {},
       { get: (_, name) => path.resolve('.', 'node_modules', name) },
